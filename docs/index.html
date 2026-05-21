@@ -8,66 +8,81 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="guide.css">
 </head>
 <body>
-  <div class="progress-bar" id="progress"></div>
 
-  <nav class="nav" id="nav">
-    <div class="nav-brand">
+  <!-- ═══ Shared Top Nav ═══ -->
+  <nav class="topnav" id="topnav">
+    <div class="topnav-brand">
       <span class="nav-logo">&#9650;</span>
       <span>AGY CLI</span>
     </div>
-    <div class="nav-controls">
-      <a href="guide.html" class="nav-link">Docs</a>
+    <div class="topnav-tabs">
+      <button class="topnav-tab active" data-view="slides" id="tabSlides">Slides</button>
+      <button class="topnav-tab" data-view="docs" id="tabDocs">Docs</button>
+    </div>
+    <div class="topnav-right">
+      <a href="https://github.com/agylabs/agy-demos" class="topnav-gh" target="_blank">GitHub &nearr;</a>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- ═══ SLIDES VIEW ═══ -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div id="slides-view" class="view active">
+
+    <div class="progress-bar" id="progress"></div>
+
+    <div class="slides-controls">
       <span class="slide-counter" id="slideCounter">1 / 10</span>
       <button class="nav-btn" id="prevBtn" aria-label="Previous slide">&larr;</button>
       <button class="nav-btn" id="nextBtn" aria-label="Next slide">&rarr;</button>
     </div>
-  </nav>
 
-  <main class="deck" id="deck">
+    <main class="deck" id="deck">
 
-    <!-- Slide 1: Title -->
-    <section class="slide active" data-slide="0">
-      <div class="slide-content title-slide">
-        <div class="title-badge">Antigravity CLI</div>
-        <h1>AGY <span class="gradient-text">Feature Demos</span></h1>
-        <p class="subtitle">8 bite-sized demos showcasing the power of Google's terminal-first AI coding agent</p>
-        <div class="title-features">
-          <span class="chip">Skills</span>
-          <span class="chip">Subagents</span>
-          <span class="chip">/goal</span>
-          <span class="chip">/grill-me</span>
-          <span class="chip">/schedule</span>
-          <span class="chip">Web Search</span>
-          <span class="chip">Workflow Skills</span>
-          <span class="chip">Image Gen</span>
+      <!-- Slide 1: Title -->
+      <section class="slide active" data-slide="0">
+        <div class="slide-content title-slide">
+          <div class="title-badge">Antigravity CLI</div>
+          <h1>AGY <span class="gradient-text">Feature Demos</span></h1>
+          <p class="subtitle">8 bite-sized demos showcasing the power of Google's terminal-first AI coding agent</p>
+          <div class="title-features">
+            <span class="chip">Skills</span>
+            <span class="chip">Subagents</span>
+            <span class="chip">/goal</span>
+            <span class="chip">/grill-me</span>
+            <span class="chip">/schedule</span>
+            <span class="chip">Web Search</span>
+            <span class="chip">Workflow Skills</span>
+            <span class="chip">Image Gen</span>
+          </div>
+          <div class="title-cta">
+            <span class="key-hint">Press <kbd>&rarr;</kbd> or click to begin</span>
+          </div>
         </div>
-        <div class="title-cta">
-          <span class="key-hint">Press <kbd>&rarr;</kbd> or click to begin</span>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Slide 2: Skills -->
-    <section class="slide" data-slide="1">
-      <div class="slide-content">
-        <div class="slide-header">
-          <span class="slide-number">01</span>
-          <span class="slide-label">Built-in Skills</span>
-        </div>
-        <h2><span class="gradient-text">/skills</span></h2>
-        <p class="slide-desc">56+ specialized skills turn agy into a domain expert on demand. Just describe what you need&mdash;agy loads the right skill automatically.</p>
-        <div class="two-col">
-          <div class="col">
-            <div class="terminal">
-              <div class="terminal-header">
-                <span class="terminal-dot red"></span>
-                <span class="terminal-dot yellow"></span>
-                <span class="terminal-dot green"></span>
-                <span class="terminal-title">agy</span>
-              </div>
-              <div class="terminal-body">
+      <!-- Slide 2: Skills -->
+      <section class="slide" data-slide="1">
+        <div class="slide-content">
+          <div class="slide-header">
+            <span class="slide-number">01</span>
+            <span class="slide-label">Built-in Skills</span>
+          </div>
+          <h2><span class="gradient-text">/skills</span></h2>
+          <p class="slide-desc">56+ specialized skills turn agy into a domain expert on demand. Just describe what you need&mdash;agy loads the right skill automatically.</p>
+          <div class="two-col">
+            <div class="col">
+              <div class="terminal">
+                <div class="terminal-header">
+                  <span class="terminal-dot red"></span>
+                  <span class="terminal-dot yellow"></span>
+                  <span class="terminal-dot green"></span>
+                  <span class="terminal-title">agy</span>
+                </div>
+                <div class="terminal-body">
 <pre><code><span class="prompt">&gt;</span> Use the <span class="hl">modern-web-guidance</span> skill
   to look up the latest CSS container
   queries best practices.
@@ -79,129 +94,79 @@
     "fluid-scaling,size-aware-styling")
 
 <span class="success">&#10003;</span> Retrieved 3 best-practice guides</code></pre>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col">
-            <h3>Skill Categories</h3>
-            <div class="stat-grid">
-              <div class="stat-card">
-                <div class="stat-num">5</div>
-                <div class="stat-label">Chrome DevTools</div>
+            <div class="col">
+              <h3>Skill Categories</h3>
+              <div class="stat-grid">
+                <div class="stat-card"><div class="stat-num">5</div><div class="stat-label">Chrome DevTools</div></div>
+                <div class="stat-card"><div class="stat-num">11</div><div class="stat-label">Firebase</div></div>
+                <div class="stat-card"><div class="stat-num">25+</div><div class="stat-label">Science</div></div>
+                <div class="stat-card"><div class="stat-num">2</div><div class="stat-label">Modern Web</div></div>
               </div>
-              <div class="stat-card">
-                <div class="stat-num">11</div>
-                <div class="stat-label">Firebase</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-num">25+</div>
-                <div class="stat-label">Science</div>
-              </div>
-              <div class="stat-card">
-                <div class="stat-num">2</div>
-                <div class="stat-label">Modern Web</div>
-              </div>
+              <p class="note">Skills include a11y debugging, LCP optimization, AlphaFold, PubMed, PyMOL, and more.</p>
             </div>
-            <p class="note">Skills include a11y debugging, LCP optimization, AlphaFold, PubMed, PyMOL, and more.</p>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Slide 3: Subagents -->
-    <section class="slide" data-slide="2">
-      <div class="slide-content">
-        <div class="slide-header">
-          <span class="slide-number">02</span>
-          <span class="slide-label">Subagents</span>
-        </div>
-        <h2><span class="gradient-text">Parallel Work</span> with Subagents</h2>
-        <p class="slide-desc">Spawn background agents for concurrent work. Research while coding, test while building.</p>
-        <div class="flow-diagram">
-          <div class="flow-box main-agent">
-            <div class="flow-title">Main Agent</div>
-            <div class="flow-steps">
-              <div class="flow-step">Creates <code>go-news.md</code> placeholder</div>
-              <div class="flow-step">Waits for subagent report</div>
-              <div class="flow-step">Updates file with results</div>
-              <div class="flow-step">Cleans up subagent</div>
+      <!-- Slide 3: Subagents -->
+      <section class="slide" data-slide="2">
+        <div class="slide-content">
+          <div class="slide-header">
+            <span class="slide-number">02</span>
+            <span class="slide-label">Subagents</span>
+          </div>
+          <h2><span class="gradient-text">Parallel Work</span> with Subagents</h2>
+          <p class="slide-desc">Spawn background agents for concurrent work. Research while coding, test while building.</p>
+          <div class="flow-diagram">
+            <div class="flow-box main-agent">
+              <div class="flow-title">Main Agent</div>
+              <div class="flow-steps">
+                <div class="flow-step">Creates <code>go-news.md</code> placeholder</div>
+                <div class="flow-step">Waits for subagent report</div>
+                <div class="flow-step">Updates file with results</div>
+                <div class="flow-step">Cleans up subagent</div>
+              </div>
+            </div>
+            <div class="flow-connector">
+              <div class="connector-line"></div>
+              <span class="connector-label">parallel</span>
+              <div class="connector-line"></div>
+            </div>
+            <div class="flow-box sub-agent">
+              <div class="flow-title">Research Subagent</div>
+              <div class="flow-steps">
+                <div class="flow-step">Searches web for Go 1.24 features</div>
+                <div class="flow-step">Structures findings</div>
+                <div class="flow-step">Reports back to main agent</div>
+              </div>
             </div>
           </div>
-          <div class="flow-connector">
-            <div class="connector-line"></div>
-            <span class="connector-label">parallel</span>
-            <div class="connector-line"></div>
-          </div>
-          <div class="flow-box sub-agent">
-            <div class="flow-title">Research Subagent</div>
-            <div class="flow-steps">
-              <div class="flow-step">Searches web for Go 1.24 features</div>
-              <div class="flow-step">Structures findings</div>
-              <div class="flow-step">Reports back to main agent</div>
-            </div>
+          <div class="callout">
+            <span class="callout-icon">&#9432;</span>
+            <span>Available types: <code>research</code> (read-only), <code>self</code> (full clone), or <strong>custom</strong> agents with tailored system prompts</span>
           </div>
         </div>
-        <div class="callout">
-          <span class="callout-icon">&#9432;</span>
-          <span>Available types: <code>research</code> (read-only), <code>self</code> (full clone), or <strong>custom</strong> agents with tailored system prompts</span>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Slide 4: /goal -->
-    <section class="slide" data-slide="3">
-      <div class="slide-content">
-        <div class="slide-header">
-          <span class="slide-number">03</span>
-          <span class="slide-label">Autonomous Mode</span>
-        </div>
-        <h2><span class="gradient-text">/goal</span> &mdash; Hands-Free Completion</h2>
-        <p class="slide-desc">Give agy a well-defined task and walk away. It plans, builds, tests, verifies, and documents&mdash;all without human input.</p>
-        <div class="timeline">
-          <div class="timeline-item">
-            <div class="timeline-marker">1</div>
-            <div class="timeline-content">
-              <strong>Environment check</strong>
-              <span class="dim">Verified Python 3 &amp; unittest</span>
-            </div>
+      <!-- Slide 4: /goal -->
+      <section class="slide" data-slide="3">
+        <div class="slide-content">
+          <div class="slide-header"><span class="slide-number">03</span><span class="slide-label">Autonomous Mode</span></div>
+          <h2><span class="gradient-text">/goal</span> &mdash; Hands-Free Completion</h2>
+          <p class="slide-desc">Give agy a well-defined task and walk away. It plans, builds, tests, verifies, and documents&mdash;all without human input.</p>
+          <div class="timeline">
+            <div class="timeline-item"><div class="timeline-marker">1</div><div class="timeline-content"><strong>Environment check</strong><span class="dim">Verified Python 3 &amp; unittest</span></div></div>
+            <div class="timeline-item"><div class="timeline-marker">2</div><div class="timeline-content"><strong>Plan</strong><span class="dim">Created implementation_plan.md</span></div></div>
+            <div class="timeline-item"><div class="timeline-marker">3</div><div class="timeline-content"><strong>Implement</strong><span class="dim">Wrote countdown.py with argparse &amp; validation</span></div></div>
+            <div class="timeline-item"><div class="timeline-marker">4</div><div class="timeline-content"><strong>Test</strong><span class="dim">Created test_countdown.py &mdash; 9/9 tests passing</span></div></div>
+            <div class="timeline-item"><div class="timeline-marker">5</div><div class="timeline-content"><strong>Verify &amp; Audit</strong><span class="dim">Manual checks + requirement traceability matrix</span></div></div>
           </div>
-          <div class="timeline-item">
-            <div class="timeline-marker">2</div>
-            <div class="timeline-content">
-              <strong>Plan</strong>
-              <span class="dim">Created implementation_plan.md</span>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-marker">3</div>
-            <div class="timeline-content">
-              <strong>Implement</strong>
-              <span class="dim">Wrote countdown.py with argparse &amp; validation</span>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-marker">4</div>
-            <div class="timeline-content">
-              <strong>Test</strong>
-              <span class="dim">Created test_countdown.py &mdash; 9/9 tests passing</span>
-            </div>
-          </div>
-          <div class="timeline-item">
-            <div class="timeline-marker">5</div>
-            <div class="timeline-content">
-              <strong>Verify &amp; Audit</strong>
-              <span class="dim">Manual checks + requirement traceability matrix</span>
-            </div>
-          </div>
-        </div>
-        <div class="terminal compact">
-          <div class="terminal-header">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">result</span>
-          </div>
-          <div class="terminal-body">
+          <div class="terminal compact">
+            <div class="terminal-header"><span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span><span class="terminal-title">result</span></div>
+            <div class="terminal-body">
 <pre><code>$ python3 countdown.py 5
 5
 4
@@ -209,133 +174,63 @@
 2
 1
 <span class="success">Liftoff!</span></code></pre>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Slide 5: /grill-me -->
-    <section class="slide" data-slide="4">
-      <div class="slide-content">
-        <div class="slide-header">
-          <span class="slide-number">04</span>
-          <span class="slide-label">Requirements Gathering</span>
-        </div>
-        <h2><span class="gradient-text">/grill-me</span> &mdash; Ask First, Build Later</h2>
-        <p class="slide-desc">Agy interviews you with targeted questions and curated options before writing a single line of code.</p>
-        <div class="question-flow">
-          <div class="question-card">
-            <div class="q-num">Q1</div>
-            <div class="q-text">Technology stack?</div>
-            <div class="q-answer">Python + FastAPI + SQLite</div>
+      <!-- Slide 5: /grill-me -->
+      <section class="slide" data-slide="4">
+        <div class="slide-content">
+          <div class="slide-header"><span class="slide-number">04</span><span class="slide-label">Requirements Gathering</span></div>
+          <h2><span class="gradient-text">/grill-me</span> &mdash; Ask First, Build Later</h2>
+          <p class="slide-desc">Agy interviews you with targeted questions and curated options before writing a single line of code.</p>
+          <div class="question-flow">
+            <div class="question-card"><div class="q-num">Q1</div><div class="q-text">Technology stack?</div><div class="q-answer">Python + FastAPI + SQLite</div></div>
+            <div class="question-card"><div class="q-num">Q2</div><div class="q-text">Slug generation?</div><div class="q-answer">Secure random 6-char Base62</div></div>
+            <div class="question-card"><div class="q-num">Q3</div><div class="q-text">UI type?</div><div class="q-answer">Interactive Web UI + JSON API</div></div>
+            <div class="question-card"><div class="q-num">Q4</div><div class="q-text">Extra features?</div><div class="q-answer">Click tracking + TTL + QR codes</div></div>
+            <div class="question-card"><div class="q-num">Q5</div><div class="q-text">Directory structure?</div><div class="q-answer">url_shortener/ subdirectory</div></div>
           </div>
-          <div class="question-card">
-            <div class="q-num">Q2</div>
-            <div class="q-text">Slug generation?</div>
-            <div class="q-answer">Secure random 6-char Base62</div>
-          </div>
-          <div class="question-card">
-            <div class="q-num">Q3</div>
-            <div class="q-text">UI type?</div>
-            <div class="q-answer">Interactive Web UI + JSON API</div>
-          </div>
-          <div class="question-card">
-            <div class="q-num">Q4</div>
-            <div class="q-text">Extra features?</div>
-            <div class="q-answer">Click tracking + TTL + QR codes</div>
-          </div>
-          <div class="question-card">
-            <div class="q-num">Q5</div>
-            <div class="q-text">Directory structure?</div>
-            <div class="q-answer">url_shortener/ subdirectory</div>
+          <div class="callout">
+            <span class="callout-icon">&#9654;</span>
+            <span>After 5 questions, agy produced a full implementation plan and built a <strong>URL shortener</strong> with glassmorphic UI, click analytics, TTL, and QR codes.</span>
           </div>
         </div>
-        <div class="callout">
-          <span class="callout-icon">&#9654;</span>
-          <span>After 5 questions, agy produced a full implementation plan and built a <strong>URL shortener</strong> with glassmorphic UI, click analytics, TTL, and QR codes.</span>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Slide 6: /schedule -->
-    <section class="slide" data-slide="5">
-      <div class="slide-content">
-        <div class="slide-header">
-          <span class="slide-number">05</span>
-          <span class="slide-label">Background Scheduling</span>
-        </div>
-        <h2><span class="gradient-text">/schedule</span> &mdash; Set It and Forget It</h2>
-        <p class="slide-desc">Agy schedules itself to wake up after a delay or on a recurring interval. Zero resource usage while waiting.</p>
-        <div class="schedule-demo">
-          <div class="schedule-step">
-            <div class="schedule-time">T+0s</div>
-            <div class="schedule-action">
-              <div class="schedule-icon register">&#9201;</div>
-              <div>
-                <strong>Register timer</strong>
-                <span class="dim">Schedule(60s) &rarr; task-150</span>
-              </div>
-            </div>
+      <!-- Slide 6: /schedule -->
+      <section class="slide" data-slide="5">
+        <div class="slide-content">
+          <div class="slide-header"><span class="slide-number">05</span><span class="slide-label">Background Scheduling</span></div>
+          <h2><span class="gradient-text">/schedule</span> &mdash; Set It and Forget It</h2>
+          <p class="slide-desc">Agy schedules itself to wake up after a delay or on a recurring interval. Zero resource usage while waiting.</p>
+          <div class="schedule-demo">
+            <div class="schedule-step"><div class="schedule-time">T+0s</div><div class="schedule-action"><div class="schedule-icon register">&#9201;</div><div><strong>Register timer</strong><span class="dim">Schedule(60s) &rarr; task-150</span></div></div></div>
+            <div class="schedule-step idle"><div class="schedule-time">T+0s</div><div class="schedule-action"><div class="schedule-icon sleep">&#9790;</div><div><strong>Go idle</strong><span class="dim">Yield control, zero resource usage</span></div></div></div>
+            <div class="schedule-step"><div class="schedule-time">T+60s</div><div class="schedule-action"><div class="schedule-icon wake">&#9889;</div><div><strong>Wake up</strong><span class="dim">System fires timer, agy resumes</span></div></div></div>
+            <div class="schedule-step"><div class="schedule-time">T+60s</div><div class="schedule-action"><div class="schedule-icon run">&#10003;</div><div><strong>Execute</strong><span class="dim">ListDir(url_shortener/) &rarr; report</span></div></div></div>
           </div>
-          <div class="schedule-step idle">
-            <div class="schedule-time">T+0s</div>
-            <div class="schedule-action">
-              <div class="schedule-icon sleep">&#9790;</div>
-              <div>
-                <strong>Go idle</strong>
-                <span class="dim">Yield control, zero resource usage</span>
-              </div>
-            </div>
-          </div>
-          <div class="schedule-step">
-            <div class="schedule-time">T+60s</div>
-            <div class="schedule-action">
-              <div class="schedule-icon wake">&#9889;</div>
-              <div>
-                <strong>Wake up</strong>
-                <span class="dim">System fires timer, agy resumes</span>
-              </div>
-            </div>
-          </div>
-          <div class="schedule-step">
-            <div class="schedule-time">T+60s</div>
-            <div class="schedule-action">
-              <div class="schedule-icon run">&#10003;</div>
-              <div>
-                <strong>Execute</strong>
-                <span class="dim">ListDir(url_shortener/) &rarr; report</span>
-              </div>
-            </div>
+          <div class="use-cases">
+            <span class="use-case">One-shot reminders</span>
+            <span class="use-case">CI polling</span>
+            <span class="use-case">Log monitoring</span>
+            <span class="use-case">Deferred tests</span>
           </div>
         </div>
-        <div class="use-cases">
-          <span class="use-case">One-shot reminders</span>
-          <span class="use-case">CI polling</span>
-          <span class="use-case">Log monitoring</span>
-          <span class="use-case">Deferred tests</span>
-        </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Slide 7: Web Browsing -->
-    <section class="slide" data-slide="6">
-      <div class="slide-content">
-        <div class="slide-header">
-          <span class="slide-number">06</span>
-          <span class="slide-label">Web Browsing</span>
-        </div>
-        <h2><span class="gradient-text">Live Web</span> Search &amp; Browsing</h2>
-        <p class="slide-desc">Agy's knowledge isn't frozen. It searches the web in real-time for current docs, releases, and solutions.</p>
-        <div class="two-col">
-          <div class="col">
-            <div class="terminal">
-              <div class="terminal-header">
-                <span class="terminal-dot red"></span>
-                <span class="terminal-dot yellow"></span>
-                <span class="terminal-dot green"></span>
-                <span class="terminal-title">agy</span>
-              </div>
-              <div class="terminal-body">
+      <!-- Slide 7: Web Browsing -->
+      <section class="slide" data-slide="6">
+        <div class="slide-content">
+          <div class="slide-header"><span class="slide-number">06</span><span class="slide-label">Web Browsing</span></div>
+          <h2><span class="gradient-text">Live Web</span> Search &amp; Browsing</h2>
+          <p class="slide-desc">Agy's knowledge isn't frozen. It searches the web in real-time for current docs, releases, and solutions.</p>
+          <div class="two-col">
+            <div class="col">
+              <div class="terminal">
+                <div class="terminal-header"><span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span><span class="terminal-title">agy</span></div>
+                <div class="terminal-body">
 <pre><code><span class="prompt">&gt;</span> Search the web for "Gemini 3.5
   Flash release date" and tell me
   the key improvements.
@@ -347,97 +242,65 @@
 
 <span class="success">&#10003;</span> Found: Released May 19, 2026
   at Google I/O</code></pre>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col">
-            <h3>What agy found live</h3>
-            <ul class="feature-list">
-              <li>Enhanced agentic workflows</li>
-              <li>280+ output tokens/second</li>
-              <li>1M context window</li>
-              <li>Configurable thinking levels</li>
-              <li>Lower hallucinations</li>
-              <li>Frontier safety framework</li>
-            </ul>
-            <p class="note">Two parallel web searches, synthesized into a structured markdown file in seconds.</p>
+            <div class="col">
+              <h3>What agy found live</h3>
+              <ul class="feature-list">
+                <li>Enhanced agentic workflows</li>
+                <li>280+ output tokens/second</li>
+                <li>1M context window</li>
+                <li>Configurable thinking levels</li>
+                <li>Lower hallucinations</li>
+                <li>Frontier safety framework</li>
+              </ul>
+              <p class="note">Two parallel web searches, synthesized into a structured markdown file in seconds.</p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
 
-    <!-- Slide 8: Workflow Skills -->
-    <section class="slide" data-slide="7">
-      <div class="slide-content">
-        <div class="slide-header">
-          <span class="slide-number">07</span>
-          <span class="slide-label">Workflow Skills</span>
-        </div>
-        <h2><span class="gradient-text">Build Once,</span> Reuse Forever</h2>
-        <p class="slide-desc">Distill any completed workflow into a reusable SKILL.md that agy can invoke in future sessions.</p>
-        <div class="workflow-phases">
-          <div class="phase">
-            <div class="phase-icon">&#128172;</div>
-            <div class="phase-name">Brainstorm</div>
-            <div class="phase-detail">6 questions across 2 rounds</div>
+      <!-- Slide 8: Workflow Skills -->
+      <section class="slide" data-slide="7">
+        <div class="slide-content">
+          <div class="slide-header"><span class="slide-number">07</span><span class="slide-label">Workflow Skills</span></div>
+          <h2><span class="gradient-text">Build Once,</span> Reuse Forever</h2>
+          <p class="slide-desc">Distill any completed workflow into a reusable SKILL.md that agy can invoke in future sessions.</p>
+          <div class="workflow-phases">
+            <div class="phase"><div class="phase-icon">&#128172;</div><div class="phase-name">Brainstorm</div><div class="phase-detail">6 questions across 2 rounds</div></div>
+            <div class="phase-arrow">&rarr;</div>
+            <div class="phase"><div class="phase-icon">&#128220;</div><div class="phase-name">Design</div><div class="phase-detail">Implementation plan artifact</div></div>
+            <div class="phase-arrow">&rarr;</div>
+            <div class="phase"><div class="phase-icon">&#128296;</div><div class="phase-name">Build</div><div class="phase-detail">Write SKILL.md protocol</div></div>
+            <div class="phase-arrow">&rarr;</div>
+            <div class="phase"><div class="phase-icon">&#10003;</div><div class="phase-name">Validate</div><div class="phase-detail">Scaffold test app, 7/7 tests</div></div>
           </div>
-          <div class="phase-arrow">&rarr;</div>
-          <div class="phase">
-            <div class="phase-icon">&#128220;</div>
-            <div class="phase-name">Design</div>
-            <div class="phase-detail">Implementation plan artifact</div>
-          </div>
-          <div class="phase-arrow">&rarr;</div>
-          <div class="phase">
-            <div class="phase-icon">&#128296;</div>
-            <div class="phase-name">Build</div>
-            <div class="phase-detail">Write SKILL.md protocol</div>
-          </div>
-          <div class="phase-arrow">&rarr;</div>
-          <div class="phase">
-            <div class="phase-icon">&#10003;</div>
-            <div class="phase-name">Validate</div>
-            <div class="phase-detail">Scaffold test app, 7/7 tests</div>
-          </div>
-        </div>
-        <div class="terminal compact">
-          <div class="terminal-header">
-            <span class="terminal-dot red"></span>
-            <span class="terminal-dot yellow"></span>
-            <span class="terminal-dot green"></span>
-            <span class="terminal-title">future usage</span>
-          </div>
-          <div class="terminal-body">
+          <div class="terminal compact">
+            <div class="terminal-header"><span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span><span class="terminal-title">future usage</span></div>
+            <div class="terminal-body">
 <pre><code><span class="prompt">&gt;</span> Use the <span class="hl">fastapi-app-scaffold</span> skill
   to scaffold a blog API with posts,
   comments, and a modern frontend.
 
 <span class="success">&#10003;</span> Skill loaded. Scaffolding...</code></pre>
+            </div>
           </div>
+          <p class="note">The skill includes self-healing: if tests fail, agy debugs and fixes automatically.</p>
         </div>
-        <p class="note">The skill includes self-healing: if tests fail, agy debugs and fixes automatically.</p>
-      </div>
-    </section>
+      </section>
 
-    <!-- Slide 9: Image Generation -->
-    <section class="slide" data-slide="8">
-      <div class="slide-content">
-        <div class="slide-header">
-          <span class="slide-number">08</span>
-          <span class="slide-label">Image Generation</span>
-        </div>
-        <h2><span class="gradient-text">Text-to-Image</span> Built In</h2>
-        <p class="slide-desc">Generate images on-the-fly for UI mockups, assets, diagrams, and creative work. No external tools needed.</p>
-        <div class="two-col">
-          <div class="col">
-            <div class="terminal">
-              <div class="terminal-header">
-                <span class="terminal-dot red"></span>
-                <span class="terminal-dot yellow"></span>
-                <span class="terminal-dot green"></span>
-                <span class="terminal-title">agy</span>
-              </div>
-              <div class="terminal-body">
+      <!-- Slide 9: Image Generation -->
+      <section class="slide" data-slide="8">
+        <div class="slide-content">
+          <div class="slide-header"><span class="slide-number">08</span><span class="slide-label">Image Generation</span></div>
+          <h2><span class="gradient-text">Text-to-Image</span> Built In</h2>
+          <p class="slide-desc">Generate images on-the-fly for UI mockups, assets, diagrams, and creative work. No external tools needed.</p>
+          <div class="two-col">
+            <div class="col">
+              <div class="terminal">
+                <div class="terminal-header"><span class="terminal-dot red"></span><span class="terminal-dot yellow"></span><span class="terminal-dot green"></span><span class="terminal-title">agy</span></div>
+                <div class="terminal-body">
 <pre><code><span class="prompt">&gt;</span> Generate an image of a futuristic
   rocket launching from a neon-lit
   launchpad at night, with "AGY CLI"
@@ -447,87 +310,169 @@
 <span class="dim">&#9679;</span> Bash(cp artifact &rarr; rocket-launch.png)
 
 <span class="success">&#10003;</span> Saved: rocket-launch.png (1.7MB)</code></pre>
+                </div>
               </div>
             </div>
-          </div>
-          <div class="col">
-            <h3>Use Cases</h3>
-            <div class="image-uses">
-              <div class="image-use">
-                <span class="use-icon">&#127912;</span>
-                <span>UI Prototyping</span>
-              </div>
-              <div class="image-use">
-                <span class="use-icon">&#128444;</span>
-                <span>App Icons &amp; Assets</span>
-              </div>
-              <div class="image-use">
-                <span class="use-icon">&#128202;</span>
-                <span>Diagrams</span>
-              </div>
-              <div class="image-use">
-                <span class="use-icon">&#127752;</span>
-                <span>Placeholder Content</span>
+            <div class="col">
+              <h3>Use Cases</h3>
+              <div class="image-uses">
+                <div class="image-use"><span class="use-icon">&#127912;</span><span>UI Prototyping</span></div>
+                <div class="image-use"><span class="use-icon">&#128444;</span><span>App Icons &amp; Assets</span></div>
+                <div class="image-use"><span class="use-icon">&#128202;</span><span>Diagrams</span></div>
+                <div class="image-use"><span class="use-icon">&#127752;</span><span>Placeholder Content</span></div>
               </div>
             </div>
           </div>
         </div>
+      </section>
+
+      <!-- Slide 10: Get Started -->
+      <section class="slide" data-slide="9">
+        <div class="slide-content title-slide">
+          <div class="title-badge">Get Started</div>
+          <h1>Try It <span class="gradient-text">Yourself</span></h1>
+          <div class="getting-started">
+            <div class="step-card"><div class="step-num">1</div><div class="step-text"><strong>Install</strong><code>curl -fsSL https://antigravity.google/install | bash</code></div></div>
+            <div class="step-card"><div class="step-num">2</div><div class="step-text"><strong>Authenticate</strong><code>agy</code> <span class="dim">&rarr; Select "Use a Google Cloud project"</span></div></div>
+            <div class="step-card"><div class="step-num">3</div><div class="step-text"><strong>Set model</strong><code>/model</code> <span class="dim">&rarr; Gemini 3.5 Flash</span></div></div>
+            <div class="step-card"><div class="step-num">4</div><div class="step-text"><strong>Explore</strong><code>/skills</code> <code>/goal</code> <code>/grill-me</code> <code>/schedule</code></div></div>
+          </div>
+          <div class="title-cta">
+            <a href="https://github.com/agylabs/agy-demos" class="cta-link">View on GitHub &rarr;</a>
+          </div>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer" id="footer">
+      <div class="footer-keys">
+        <kbd>&larr;</kbd> <kbd>&rarr;</kbd> navigate
+        &nbsp;&middot;&nbsp;
+        <kbd>Space</kbd> next
+        &nbsp;&middot;&nbsp;
+        <kbd>Home</kbd> <kbd>End</kbd> jump
       </div>
-    </section>
+    </footer>
 
-    <!-- Slide 10: Get Started -->
-    <section class="slide" data-slide="9">
-      <div class="slide-content title-slide">
-        <div class="title-badge">Get Started</div>
-        <h1>Try It <span class="gradient-text">Yourself</span></h1>
-        <div class="getting-started">
-          <div class="step-card">
-            <div class="step-num">1</div>
-            <div class="step-text">
-              <strong>Install</strong>
-              <code>curl -fsSL https://antigravity.google/install | bash</code>
-            </div>
-          </div>
-          <div class="step-card">
-            <div class="step-num">2</div>
-            <div class="step-text">
-              <strong>Authenticate</strong>
-              <code>agy</code> <span class="dim">&rarr; Select "Use a Google Cloud project"</span>
-            </div>
-          </div>
-          <div class="step-card">
-            <div class="step-num">3</div>
-            <div class="step-text">
-              <strong>Set model</strong>
-              <code>/model</code> <span class="dim">&rarr; Gemini 3.5 Flash</span>
-            </div>
-          </div>
-          <div class="step-card">
-            <div class="step-num">4</div>
-            <div class="step-text">
-              <strong>Explore</strong>
-              <code>/skills</code> <code>/goal</code> <code>/grill-me</code> <code>/schedule</code>
-            </div>
-          </div>
-        </div>
-        <div class="title-cta">
-          <a href="https://github.com/agylabs/agy-demos" class="cta-link">View on GitHub &rarr;</a>
-        </div>
-      </div>
-    </section>
+  </div>
 
-  </main>
+  <!-- ══════════════════════════════════════════════ -->
+  <!-- ═══ DOCS VIEW ═══ -->
+  <!-- ══════════════════════════════════════════════ -->
+  <div id="docs-view" class="view">
 
-  <footer class="footer" id="footer">
-    <div class="footer-keys">
-      <kbd>&larr;</kbd> <kbd>&rarr;</kbd> navigate
-      &nbsp;&middot;&nbsp;
-      <kbd>Space</kbd> next
-      &nbsp;&middot;&nbsp;
-      <kbd>Home</kbd> <kbd>End</kbd> jump
-    </div>
-  </footer>
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">Feature Guide</div>
+      <nav class="sidebar-nav">
+        <a href="#skills" class="sidebar-link active" data-section="skills"><span class="sidebar-num">01</span> Skills</a>
+        <a href="#subagents" class="sidebar-link" data-section="subagents"><span class="sidebar-num">02</span> Subagents</a>
+        <a href="#goal" class="sidebar-link" data-section="goal"><span class="sidebar-num">03</span> /goal</a>
+        <a href="#grill-me" class="sidebar-link" data-section="grill-me"><span class="sidebar-num">04</span> /grill-me</a>
+        <a href="#schedule" class="sidebar-link" data-section="schedule"><span class="sidebar-num">05</span> /schedule</a>
+        <a href="#web" class="sidebar-link" data-section="web"><span class="sidebar-num">06</span> Web Browsing</a>
+        <a href="#workflow" class="sidebar-link" data-section="workflow"><span class="sidebar-num">07</span> Workflow Skills</a>
+        <a href="#imagegen" class="sidebar-link" data-section="imagegen"><span class="sidebar-num">08</span> Image Generation</a>
+      </nav>
+    </aside>
+
+    <button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle sidebar">&#9776;</button>
+
+    <main class="docs-main" id="docsMain">
+
+      <section class="doc-section" id="skills">
+        <div class="section-header"><span class="section-num">01</span><div><h1>Built-in Skills</h1><p class="section-tagline">56+ specialized skills turn agy into a domain expert on demand</p></div></div>
+        <div class="doc-card"><h2>What Are Skills?</h2><p>Skills are expert playbooks that give agy deep domain knowledge. They're loaded on-demand and can fetch live data, run CLI tools, and follow curated best practices. Skills come from plugins and can be created per-workspace or globally.</p></div>
+        <div class="doc-card"><h2>How to Use</h2><div class="code-block"><div class="code-header">Interactive Mode</div><pre><code>/skills              <span class="code-comment"># List all available skills in the TUI overlay</span></code></pre></div><p>Then reference a skill in your prompt &mdash; agy activates it automatically.</p></div>
+        <div class="doc-card"><h2>Demo: Modern Web Guidance Skill</h2><div class="prompt-block"><div class="prompt-label">Prompt</div><p>Use the modern-web-guidance skill to look up the latest CSS container queries best practices. Give me a short summary of what you find.</p></div><h3>What agy did</h3><ol class="step-list"><li>Read the skill definition (<code>SKILL.md</code>) to understand how to use it</li><li>Ran <code>npx -y modern-web-guidance@latest search "container queries"</code> to find relevant guides</li><li>Retrieved multiple guides: <code>fluid-scaling</code>, <code>size-aware-styling</code>, <code>css-layout</code></li><li>Synthesized a concise summary covering containment, fluid scaling, size-aware layouts, and progressive enhancement</li></ol></div>
+        <div class="doc-card"><h2>Available Skill Categories</h2><div class="table-wrap"><table><thead><tr><th>Category</th><th>Count</th><th>Examples</th></tr></thead><tbody><tr><td>Chrome DevTools</td><td>5</td><td>a11y debugging, LCP optimization, memory leak diagnosis</td></tr><tr><td>Firebase</td><td>11</td><td>Auth, Firestore, Data Connect, Crashlytics, security rules</td></tr><tr><td>Modern Web</td><td>2</td><td>CSS/HTML best practices, Chrome Extensions (Manifest V3)</td></tr><tr><td>Science</td><td>25+</td><td>AlphaFold, PubMed, PDB, PyMOL, genomics, proteomics</td></tr><tr><td>Android</td><td>1</td><td>Android CLI orchestration</td></tr><tr><td>Utility</td><td>1</td><td>Workflow skill creator</td></tr></tbody></table></div></div>
+        <div class="doc-callout"><strong>Key Takeaway:</strong> Skills turn agy into a domain expert on demand &mdash; no configuration needed. Just describe what you want and reference the domain; agy loads the right skill automatically.</div>
+      </section>
+
+      <section class="doc-section" id="subagents">
+        <div class="section-header"><span class="section-num">02</span><div><h1>Subagents</h1><p class="section-tagline">Spawn background agents for parallel, concurrent work</p></div></div>
+        <div class="doc-card"><h2>What Are Subagents?</h2><p>Agy can delegate tasks to specialized subagents that run concurrently in the background. When a subagent finishes, it reports back and the main agent integrates the results. This enables true parallel workflows.</p></div>
+        <div class="doc-card"><h2>Available Subagent Types</h2><div class="table-wrap"><table><thead><tr><th>Type</th><th>Capability</th><th>Use Case</th></tr></thead><tbody><tr><td><code>research</code></td><td>Read-only, web search, codebase exploration</td><td>Finding docs, researching APIs</td></tr><tr><td><code>self</code></td><td>Full capabilities (clone of main agent)</td><td>Independent coding tasks</td></tr><tr><td>Custom</td><td>User-defined system prompt + toolset</td><td>Domain-specific agents</td></tr></tbody></table></div></div>
+        <div class="doc-card"><h2>Demo: Parallel Research + File Creation</h2><div class="prompt-block"><div class="prompt-label">Prompt</div><p>Spawn a research subagent to find the top 3 newest features in Go 1.24, while you simultaneously create a short summary file called go-news.md. Show me how you can work in parallel with the subagent.</p></div><h3>What happened in parallel</h3><div class="parallel-grid"><div class="parallel-col"><div class="parallel-title">Main Agent</div><ol class="step-list"><li>Created <code>go-news.md</code> with placeholder</li><li>Yielded execution, waited</li><li>Received subagent report</li><li>Updated <code>go-news.md</code> with final content</li><li>Killed subagent (cleanup)</li></ol></div><div class="parallel-col accent"><div class="parallel-title">Research Subagent</div><ol class="step-list"><li>Searched the web for Go 1.24 features</li><li>Found and structured the top 3 features</li><li>Reported results back to main agent</li></ol></div></div><h3>Result</h3><p><code>go-news.md</code> was created with: Generic Type Aliases, First-Class Tool Dependencies (<code>go get -tool</code>), and Directory-Scoped Filesystem Access (<code>os.Root</code>).</p></div>
+        <div class="doc-card"><h2>Key Details</h2><ul class="detail-list"><li>Subagents show in the status bar: <code>1 subagent(s)</code></li><li>View all subagents with <code>/agents</code></li><li>Navigate subagent approvals with <kbd>ctrl+j</kbd> (teleport) and <kbd>ctrl+k</kbd> (quick approve)</li><li>Subagents can be spawned in isolated workspaces to avoid conflicts</li></ul></div>
+        <div class="doc-callout"><strong>Key Takeaway:</strong> Subagents let agy parallelize work &mdash; research while coding, test while building, explore while implementing. The main agent orchestrates and integrates results automatically.</div>
+      </section>
+
+      <section class="doc-section" id="goal">
+        <div class="section-header"><span class="section-num">03</span><div><h1>/goal &mdash; Autonomous Completion</h1><p class="section-tagline">Give agy a task and walk away. It plans, builds, tests, and verifies.</p></div></div>
+        <div class="doc-card"><h2>What Is /goal?</h2><p>Normally, agy may pause to ask clarifying questions or request approval. The <code>/goal</code> command tells agy to lock in and aggressively pursue the task to completion without stopping. It plans, implements, tests, and verifies &mdash; all autonomously.</p></div>
+        <div class="doc-card"><h2>Demo: Build a CLI Tool End-to-End</h2><div class="prompt-block"><div class="prompt-label">Prompt</div><p>/goal Create a Python CLI tool called "countdown.py" that takes a number as an argument and prints a countdown from that number to 1, with each number on a new line, followed by "Liftoff!" at the end. Include argument validation and a --reverse flag to count up instead. Write tests in test_countdown.py and make sure they pass.</p></div><h3>What agy did autonomously (zero human input)</h3><div class="table-wrap"><table><thead><tr><th>Step</th><th>Action</th><th>Details</th></tr></thead><tbody><tr><td>1</td><td>Environment check</td><td>Verified Python 3 and unittest available</td></tr><tr><td>2</td><td>Created implementation plan</td><td>Wrote <code>implementation_plan.md</code></td></tr><tr><td>3</td><td>Auto-approved plan</td><td>Didn't wait for human &mdash; <code>/goal</code> mode</td></tr><tr><td>4</td><td>Created task tracker</td><td>Wrote <code>task.md</code> with checklist</td></tr><tr><td>5</td><td>Wrote <code>countdown.py</code></td><td>argparse, validation, <code>--reverse</code> flag</td></tr><tr><td>6</td><td>Wrote <code>test_countdown.py</code></td><td>9 test cases using <code>unittest</code> + subprocess</td></tr><tr><td>7</td><td>Ran automated tests</td><td>All 9 passed</td></tr><tr><td>8</td><td>Manual verification</td><td>Tested multiple input variations</td></tr><tr><td>9</td><td>Created walkthrough</td><td>Wrote <code>walkthrough.md</code> with design + diffs</td></tr><tr><td>10</td><td>Final audit</td><td>Requirements checklist mapped to evidence</td></tr></tbody></table></div><h3>Result</h3><div class="code-block"><div class="code-header">Output</div><pre><code>$ python3 countdown.py 5
+5
+4
+3
+2
+1
+Liftoff!
+
+$ python3 countdown.py 3 --reverse
+1
+2
+3
+Liftoff!</code></pre></div></div>
+        <div class="doc-card"><h2>Artifacts Generated</h2><p>Agy also created planning artifacts tracked via <code>/artifact</code>:</p><ul class="detail-list"><li><code>implementation_plan.md</code> &mdash; design before coding</li><li><code>task.md</code> &mdash; progress checklist</li><li><code>walkthrough.md</code> &mdash; post-completion summary with diffs</li></ul></div>
+        <div class="doc-callout"><strong>Key Takeaway:</strong> <code>/goal</code> is agy's "overnight mode" &mdash; give it a well-defined task and walk away. It plans, builds, tests, verifies, and documents everything without needing human intervention.</div>
+      </section>
+
+      <section class="doc-section" id="grill-me">
+        <div class="section-header"><span class="section-num">04</span><div><h1>/grill-me &mdash; Requirements Gathering</h1><p class="section-tagline">Interactive interview with targeted questions before writing any code</p></div></div>
+        <div class="doc-card"><h2>What Is /grill-me?</h2><p>Instead of guessing or making assumptions, <code>/grill-me</code> triggers an interactive interview where agy asks a series of design questions &mdash; each with curated options and recommendations &mdash; before writing any code.</p></div>
+        <div class="doc-card"><h2>Demo: URL Shortener Service</h2><div class="prompt-block"><div class="prompt-label">Prompt</div><p>/grill-me I want to build a URL shortener service</p></div><h3>Questions agy asked (with interactive TUI selectors)</h3><div class="table-wrap"><table><thead><tr><th>#</th><th>Question</th><th>Options Offered</th><th>Selected</th></tr></thead><tbody><tr><td>1</td><td>Technology stack?</td><td>Python/FastAPI+SQLite, Go+SQLite, Node/Express, Firebase</td><td class="selected">Python/FastAPI+SQLite</td></tr><tr><td>2</td><td>Slug generation?</td><td>Random token, Auto-increment ID, Truncated hash</td><td class="selected">Secure Random Token (6-char Base62)</td></tr><tr><td>3</td><td>UI type?</td><td>Web UI + API, Pure REST API, React SPA + API</td><td class="selected">Interactive Web UI + JSON API</td></tr><tr><td>4</td><td>Extra features?</td><td>Click tracking, TTL, QR codes, Delete key, Passwords</td><td class="selected">Click tracking + TTL + QR codes</td></tr><tr><td>5</td><td>Directory?</td><td><code>url_shortener/</code> subdirectory, workspace root</td><td class="selected"><code>url_shortener/</code> subdirectory</td></tr></tbody></table></div><h3>TUI Interaction Style</h3><ul class="detail-list"><li><strong>Single-select:</strong> <code>&gt; 1. (Recommended) Python with FastAPI and SQLite</code> with arrow key navigation</li><li><strong>Multi-select:</strong> <code>[ ] Click Tracking</code> toggleable with <kbd>x</kbd> key</li><li>Each option includes a description explaining tradeoffs</li></ul><h3>Result</h3><p>After 5 questions, agy produced a detailed <code>implementation_plan.md</code> with full design alignment, then built a complete URL shortener with glassmorphic UI, click analytics, TTL expiration, and QR code generation.</p></div>
+        <div class="doc-callout"><strong>Key Takeaway:</strong> <code>/grill-me</code> is the opposite of <code>/goal</code> &mdash; instead of charging ahead, it pauses to gather requirements first. Use it when the task is ambiguous or has many design choices.</div>
+      </section>
+
+      <section class="doc-section" id="schedule">
+        <div class="section-header"><span class="section-num">05</span><div><h1>/schedule &mdash; Background Tasks</h1><p class="section-tagline">Set timers and recurring jobs that wake agy up automatically</p></div></div>
+        <div class="doc-card"><h2>What Is /schedule?</h2><p>Agy can schedule itself to wake up after a delay or on a recurring interval. While waiting, it goes idle (uses no resources). When the timer fires, the system wakes agy and it executes the scheduled task.</p></div>
+        <div class="doc-card"><h2>Demo: One-Shot Reminder (60 seconds)</h2><div class="prompt-block"><div class="prompt-label">Prompt</div><p>Use /schedule to set up a one-shot reminder that triggers in 1 minute to check if the url_shortener directory exists and report its contents.</p></div><h3>Timeline</h3><div class="table-wrap"><table><thead><tr><th>Step</th><th>Time</th><th>Action</th></tr></thead><tbody><tr><td>1</td><td>T+0s</td><td>Registered a 60-second timer via <code>Schedule()</code> tool</td></tr><tr><td>2</td><td>T+0s</td><td>Went idle &mdash; yielded control, stopped all tool calls</td></tr><tr><td>3</td><td>T+60s</td><td>System fired the timer, woke agy with a notification</td></tr><tr><td>4</td><td>T+60s</td><td>Agy ran <code>ListDir()</code> on <code>url_shortener/</code> and reported contents</td></tr></tbody></table></div></div>
+        <div class="doc-card"><h2>Use Cases</h2><div class="table-wrap"><table><thead><tr><th>Pattern</th><th>Example</th></tr></thead><tbody><tr><td>One-shot timer</td><td>"Remind me in 10 minutes to check the deploy"</td></tr><tr><td>Recurring poll</td><td>"Check CI status every 5 minutes until it passes"</td></tr><tr><td>Background monitor</td><td>"Watch the server logs and alert me if errors spike"</td></tr><tr><td>Deferred task</td><td>"In 30 minutes, run the full test suite"</td></tr></tbody></table></div></div>
+        <div class="doc-card"><h2>How It Works</h2><ol class="step-list"><li><strong>Register:</strong> Agy calls <code>Schedule(DurationSeconds=N, prompt="...")</code></li><li><strong>Yield:</strong> Agy ends its turn and goes idle</li><li><strong>Fire:</strong> System tracks the countdown and sends a wakeup notification</li><li><strong>Execute:</strong> Agy resumes with the scheduled prompt and runs the task</li></ol></div>
+        <div class="doc-callout"><strong>Key Takeaway:</strong> <code>/schedule</code> turns agy into an autonomous background worker. Set a timer and walk away &mdash; agy wakes itself up and handles it.</div>
+      </section>
+
+      <section class="doc-section" id="web">
+        <div class="section-header"><span class="section-num">06</span><div><h1>Web Browsing &amp; Search</h1><p class="section-tagline">Real-time web search to get current information on anything</p></div></div>
+        <div class="doc-card"><h2>What Can Agy Do on the Web?</h2><ul class="detail-list"><li><strong>Web Search:</strong> Query search engines for current information</li><li><strong>URL Reading:</strong> Fetch and process content from any public URL</li><li><strong>Live Documentation:</strong> Look up the latest API docs, release notes, changelogs</li></ul></div>
+        <div class="doc-card"><h2>Demo: Research a Recent Release</h2><div class="prompt-block"><div class="prompt-label">Prompt</div><p>Search the web for "Google Gemini 3.5 Flash release date" and tell me when it was released and what its key improvements are. Then create a file with your findings.</p></div><h3>What agy did</h3><ol class="step-list"><li>Ran two parallel web searches</li><li>Synthesized findings from multiple search results</li><li>Created <code>gemini-flash-notes.md</code> with structured findings</li></ol><h3>Findings retrieved</h3><ul class="detail-list"><li>Enhanced agentic workflows and multi-step reasoning</li><li>280+ output tokens/second, 1M context window</li><li>Configurable thinking levels (Minimal/Low/Medium/High)</li><li>Lower hallucinations, higher coding benchmarks</li></ul></div>
+        <div class="doc-card"><h2>Practical Use Cases</h2><div class="table-wrap"><table><thead><tr><th>Use Case</th><th>Example</th></tr></thead><tbody><tr><td>API docs</td><td>"Look up the latest FastAPI middleware docs"</td></tr><tr><td>Debugging</td><td>"Search for this error message and find the fix"</td></tr><tr><td>Research</td><td>"What's new in Python 3.13?"</td></tr><tr><td>Best practices</td><td>"Find the current OWASP top 10"</td></tr><tr><td>Dependency check</td><td>"Is there a newer version of React Router?"</td></tr></tbody></table></div></div>
+        <div class="doc-callout"><strong>Key Takeaway:</strong> Agy's knowledge isn't frozen &mdash; it can search the web in real-time, making it useful for researching new releases, finding documentation, and debugging with the latest solutions.</div>
+      </section>
+
+      <section class="doc-section" id="workflow">
+        <div class="section-header"><span class="section-num">07</span><div><h1>Workflow Skill Creator</h1><p class="section-tagline">Build once, distill into a skill, reuse forever</p></div></div>
+        <div class="doc-card"><h2>What Is the Workflow Skill Creator?</h2><p>After completing a complex multi-step workflow (like building a FastAPI app), agy can analyze what it did and create a reusable <strong>SKILL.md</strong> file &mdash; a structured protocol that guides future agy sessions to reproduce the same workflow pattern with different inputs.</p></div>
+        <div class="doc-card"><h2>Demo: Creating "fastapi-app-scaffold" Skill</h2><div class="prompt-block"><div class="prompt-label">Prompt</div><p>Use the workflow-skill-creator skill to distill our URL shortener building workflow into a reusable skill called "fastapi-app-scaffold" that can scaffold any FastAPI + SQLite web application with tests.</p></div><h3>Structured brainstorming process</h3><div class="table-wrap"><table><thead><tr><th>Phase</th><th>Action</th></tr></thead><tbody><tr><td><strong>Phase 1: Brainstorming</strong></td><td>Asked 6 clarifying questions across 2 rounds</td></tr><tr><td>Round 1</td><td>Workflow accuracy, input format, usage frequency</td></tr><tr><td>Round 2</td><td>Error handling strategy, database layer, skill pattern</td></tr><tr><td><strong>Phase 2: Design</strong></td><td>Created <code>implementation_plan.md</code> artifact</td></tr><tr><td><strong>Phase 3: Implementation</strong></td><td>Wrote <code>SKILL.md</code> with full protocol</td></tr><tr><td><strong>Phase 4: Validation</strong></td><td>Scaffolded a "Task Manager" app using the new skill</td></tr><tr><td><strong>Phase 5: Self-Healing</strong></td><td>Fixed namespace collision, re-ran tests (7/7 passed)</td></tr></tbody></table></div><h3>Decisions captured in the skill</h3><ul class="detail-list"><li>API-only or API+Frontend (configurable)</li><li>Natural language input for requirements</li><li>Raw sqlite3 by default, ORM if specified</li><li>Self-healing test verification loop</li><li>Modern CSS glassmorphism for frontends</li></ul></div>
+        <div class="doc-card"><h2>Validation App Created</h2><p>Agy validated the skill by building a complete <strong>Task Manager</strong> app:</p><div class="code-block"><div class="code-header">Directory Structure</div><pre><code>task_manager/
+├── app/
+│   ├── main.py          <span class="code-comment"># FastAPI CRUD endpoints</span>
+│   ├── database.py      <span class="code-comment"># SQLite with parameterized queries</span>
+│   ├── schemas.py       <span class="code-comment"># Pydantic validation</span>
+│   └── static/          <span class="code-comment"># Glassmorphic dark-mode frontend</span>
+├── tests/
+│   └── test_main.py     <span class="code-comment"># 7 integration tests (all passing)</span>
+└── requirements.txt</code></pre></div><div class="code-block"><div class="code-header">Future Usage</div><pre><code>&gt; Use the <span class="hl">fastapi-app-scaffold</span> skill to scaffold a blog API
+  with posts, comments, and a modern frontend.
+
+<span class="success">&#10003;</span> Skill loaded. Scaffolding...</code></pre></div></div>
+        <div class="doc-callout"><strong>Key Takeaway:</strong> The workflow skill creator turns one-off work into institutional knowledge. Build something once, distill it into a skill, and agy can reproduce the pattern indefinitely &mdash; with full self-healing and validation built in.</div>
+      </section>
+
+      <section class="doc-section" id="imagegen">
+        <div class="section-header"><span class="section-num">08</span><div><h1>Image Generation</h1><p class="section-tagline">Text-to-image built directly into the CLI</p></div></div>
+        <div class="doc-card"><h2>What Can Agy Generate?</h2><ul class="detail-list"><li>UI mockups and wireframes</li><li>App icons, logos, and placeholder assets</li><li>Diagrams and visual aids</li><li>Creative/marketing images</li><li>Any image from a text description</li></ul></div>
+        <div class="doc-card"><h2>Demo: Futuristic Rocket Launch</h2><div class="prompt-block"><div class="prompt-label">Prompt</div><p>Generate an image of a futuristic rocket launching from a neon-lit launchpad at night, with the text "AGY CLI" visible on the rocket body. Save it as rocket-launch.png.</p></div><h3>What agy did</h3><ol class="step-list"><li>Called <code>GenerateImage()</code> tool with the detailed prompt</li><li>Image generated as an artifact in the conversation</li><li>Copied the generated image to the workspace directory</li><li>Confirmed the file path and provided a preview</li></ol><p><strong>Result:</strong> <code>rocket-launch.png</code> (1.7MB) saved to workspace.</p></div>
+        <div class="doc-card"><h2>Practical Use Cases</h2><div class="table-wrap"><table><thead><tr><th>Use Case</th><th>Example</th></tr></thead><tbody><tr><td>UI Prototyping</td><td>"Generate a mockup of the login page with dark mode"</td></tr><tr><td>App Assets</td><td>"Create a 512x512 app icon for a weather app"</td></tr><tr><td>Placeholder Content</td><td>"Generate 3 placeholder hero images for the landing page"</td></tr><tr><td>Documentation</td><td>"Create a diagram showing the data flow between services"</td></tr><tr><td>Branding</td><td>"Design a logo for the project with blue and white colors"</td></tr></tbody></table></div></div>
+        <div class="doc-callout"><strong>Key Takeaway:</strong> Image generation is built directly into agy &mdash; no need for external tools. Just describe what you need in natural language and agy generates it inline, saving it wherever you specify.</div>
+      </section>
+
+    </main>
+  </div>
 
   <script src="app.js"></script>
+  <script src="guide.js"></script>
 </body>
 </html>

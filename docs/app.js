@@ -1,4 +1,52 @@
 (() => {
+  // ── View Switching ──
+  const slidesView = document.getElementById('slides-view');
+  const docsView = document.getElementById('docs-view');
+  const tabSlides = document.getElementById('tabSlides');
+  const tabDocs = document.getElementById('tabDocs');
+  let currentView = 'slides';
+
+  const docSections = ['skills', 'subagents', 'goal', 'grill-me', 'schedule', 'web', 'workflow', 'imagegen'];
+
+  function switchView(view, scrollTarget) {
+    currentView = view;
+    slidesView.classList.toggle('active', view === 'slides');
+    docsView.classList.toggle('active', view === 'docs');
+    tabSlides.classList.toggle('active', view === 'slides');
+    tabDocs.classList.toggle('active', view === 'docs');
+    document.body.classList.toggle('docs-body', view === 'docs');
+
+    if (view === 'slides') {
+      history.replaceState(null, '', '#slides');
+    } else {
+      history.replaceState(null, '', scrollTarget ? '#' + scrollTarget : '#docs');
+      if (scrollTarget) {
+        const el = document.getElementById(scrollTarget);
+        if (el) setTimeout(() => el.scrollIntoView({ behavior: 'smooth' }), 50);
+      }
+    }
+  }
+
+  tabSlides.addEventListener('click', () => switchView('slides'));
+  tabDocs.addEventListener('click', () => switchView('docs'));
+
+  // Handle initial hash
+  const hash = location.hash.replace('#', '');
+  if (hash === 'docs') {
+    switchView('docs');
+  } else if (docSections.includes(hash)) {
+    switchView('docs', hash);
+  }
+
+  // Handle hash changes (back/forward)
+  window.addEventListener('hashchange', () => {
+    const h = location.hash.replace('#', '');
+    if (h === 'slides') switchView('slides');
+    else if (h === 'docs') switchView('docs');
+    else if (docSections.includes(h)) switchView('docs', h);
+  });
+
+  // ── Slide Deck ──
   const slides = document.querySelectorAll('.slide');
   const progress = document.getElementById('progress');
   const counter = document.getElementById('slideCounter');
@@ -8,7 +56,7 @@
   let current = 0;
   let transitioning = false;
 
-  function goTo(index, direction) {
+  function goTo(index) {
     if (index < 0 || index >= total || index === current || transitioning) return;
     transitioning = true;
 
@@ -17,20 +65,17 @@
     const goingForward = index > current;
 
     prev.classList.remove('active');
-    prev.classList.add(goingForward ? 'exit-left' : '');
     prev.style.transform = goingForward ? 'translateX(-60px)' : 'translateX(60px)';
     prev.style.opacity = '0';
 
     next.style.transform = goingForward ? 'translateX(60px)' : 'translateX(-60px)';
     next.style.opacity = '0';
-    next.classList.remove('exit-left');
 
     requestAnimationFrame(() => {
       requestAnimationFrame(() => {
         next.classList.add('active');
         next.style.transform = '';
         next.style.opacity = '';
-        prev.style.transform = '';
       });
     });
 
@@ -38,7 +83,7 @@
     updateUI();
 
     setTimeout(() => {
-      prev.classList.remove('exit-left');
+      prev.style.transform = '';
       prev.style.opacity = '';
       transitioning = false;
     }, 500);
@@ -59,6 +104,7 @@
   nextBtn.addEventListener('click', next);
 
   document.addEventListener('keydown', (e) => {
+    if (currentView !== 'slides') return;
     if (e.key === 'ArrowRight' || e.key === ' ') {
       e.preventDefault();
       next();
@@ -83,6 +129,7 @@
   }, { passive: true });
 
   document.addEventListener('touchend', (e) => {
+    if (currentView !== 'slides') return;
     const dx = e.changedTouches[0].clientX - touchStartX;
     const dy = e.changedTouches[0].clientY - touchStartY;
     if (Math.abs(dx) > Math.abs(dy) && Math.abs(dx) > 50) {

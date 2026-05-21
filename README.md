@@ -1,11 +1,8 @@
 # AGY CLI Feature Demos
 
-> **[View the interactive slide deck and full docs](https://agylabs.github.io/agy-demos/)** — the best way to explore these demos.
+> **[https://agylabs.github.io/agy-demos/](https://agylabs.github.io/agy-demos/)** — Interactive slides + full docs in one page. Start here.
 
-Bite-sized demos showcasing [Antigravity CLI](https://antigravity.google) (`agy`) features. Each demo highlights a different capability with real prompts, real outputs, and working sample code.
-
-- [Slides](https://agylabs.github.io/agy-demos/) — Quick visual overview of all 8 features
-- [Docs](https://agylabs.github.io/agy-demos/guide.html) — Detailed walkthrough for each demo
+Bite-sized demos showcasing [Antigravity CLI](https://antigravity.google) (`agy`) features. Each demo highlights a different capability with real prompts, real outputs, and working sample code. Toggle between **Slides** (quick visual overview) and **Docs** (detailed walkthroughs) using the header tabs.
 
 ## Prerequisites
 
