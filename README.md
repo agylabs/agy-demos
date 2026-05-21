@@ -1,0 +1,78 @@
+# AGY CLI Feature Demos
+
+Bite-sized demos showcasing [Antigravity CLI](https://antigravity.google) (`agy`) features. Each demo was driven by Claude Code via tmux, with agy performing all the actual work.
+
+## Prerequisites
+
+- [Antigravity CLI](https://antigravity.google) installed (`agy`)
+- Enterprise auth configured (recommended) or Google OAuth
+- Model set to `Gemini 3.5 Flash` (via `/model` in interactive mode)
+
+## Demos
+
+| # | Feature | File | Description |
+|---|---------|------|-------------|
+| 1 | Skills | [01-skills.md](01-skills.md) | List and run built-in skills (56+ available) |
+| 2 | Subagents | [02-subagents.md](02-subagents.md) | Spawn background research agents for parallel work |
+| 3 | /goal | [03-goal.md](03-goal.md) | Autonomous task completion — plan, build, test, verify |
+| 4 | /grill-me | [04-grill-me.md](04-grill-me.md) | Interactive requirements gathering with TUI selectors |
+| 5 | /schedule | [05-schedule.md](05-schedule.md) | Recurring and one-shot scheduled tasks |
+| 6 | Web Browsing | [06-web-browsing.md](06-web-browsing.md) | Fetch and use live web content |
+| 7 | Workflow Skills | [07-workflow-skill.md](07-workflow-skill.md) | Distill workflows into reusable skills |
+| 8 | Image Generation | [08-image-gen.md](08-image-gen.md) | Generate images and assets with text-to-image |
+
+## Sample Artifacts
+
+These artifacts were created by agy during the demos:
+
+| Artifact | Created During | Description |
+|----------|---------------|-------------|
+| `countdown.py` + `test_countdown.py` | Demo 3 (/goal) | Python CLI tool with 9 passing tests |
+| `url_shortener/` | Demo 4 (/grill-me) | Full FastAPI + SQLite app with glassmorphic UI |
+| `task_manager/` | Demo 7 (Workflow Skill) | Validation app scaffolded by the custom skill |
+| `go-news.md` | Demo 2 (Subagents) | Go 1.24 research by a background subagent |
+| `gemini-flash-notes.md` | Demo 6 (Web Browsing) | Live web research results |
+| `rocket-launch.png` | Demo 8 (Image Gen) | AI-generated image |
+
+## How These Demos Were Made
+
+Claude Code acted as the **driver** — simulating a human demo presenter. All code was written by agy. Claude Code sent prompts to agy via tmux, captured output, and documented the process.
+
+```bash
+# Start agy in tmux
+tmux new-session -d -s agy-demos -x 200 -y 50 \
+  'cd /path/to/demos && DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus" agy --dangerously-skip-permissions'
+
+# Send a prompt
+tmux load-buffer /path/to/prompt.txt
+tmux paste-buffer -t agy-demos
+tmux send-keys -t agy-demos Enter
+
+# Watch live (read-only)
+tmux attach-session -t agy-demos -r
+```
+
+## Running the Sample Apps
+
+```bash
+# URL Shortener (from Demo 4)
+cd url_shortener
+pip install -r requirements.txt
+python3 -m uvicorn app.main:app --host 0.0.0.0 --port 8000
+# Open http://localhost:8000
+
+# Task Manager (from Demo 7)
+cd task_manager
+pip install fastapi uvicorn
+python3 -m uvicorn app.main:app --host 0.0.0.0 --port 8001
+# Open http://localhost:8001
+
+# Countdown CLI (from Demo 3)
+python3 countdown.py 10
+python3 countdown.py 5 --reverse
+python3 -m unittest test_countdown.py
+```
+
+## License
+
+Apache 2.0

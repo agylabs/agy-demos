@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SleekTasks — Minimal Task Manager</title>
+    <meta name="description" content="A gorgeous, ultra-fast task management interface scaffolded with FastAPI & SQLite.">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- FontAwesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="glass-background"></div>
+    
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <i class="fa-solid fa-square-check brand-icon"></i>
+                <h1>SleekTasks</h1>
+            </div>
+            <p class="subtitle">FastAPI & SQLite Powered Scaffolding Demonstration</p>
+        </header>
+
+        <!-- Main Workspace -->
+        <main class="main-workspace">
+            <!-- Left Side: Task Form -->
+            <section class="task-creator-section">
+                <div class="glass-card creator-card">
+                    <h2><i class="fa-solid fa-plus"></i> Create New Task</h2>
+                    <form id="task-form">
+                        <div class="input-group">
+                            <label for="task-title">Task Title</label>
+                            <input type="text" id="task-title" placeholder="e.g. Design app design system" required>
+                        </div>
+                        <div class="input-group">
+                            <label for="task-desc">Description (Optional)</label>
+                            <textarea id="task-desc" placeholder="Provide extra details for this task..."></textarea>
+                        </div>
+                        <button type="submit" id="submit-btn" class="btn btn-primary">
+                            <span class="btn-text">Create Task</span>
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </button>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Right Side: Task List Board -->
+            <section class="task-list-section">
+                <div class="glass-card board-card">
+                    <div class="board-header">
+                        <h2><i class="fa-solid fa-list-ul"></i> Active Tasks</h2>
+                        <span id="task-count" class="badge">0 Tasks</span>
+                    </div>
+                    
+                    <div id="tasks-container" class="tasks-container">
+                        <!-- Loading State -->
+                        <div id="loading-state" class="loading-state">
+                            <i class="fa-solid fa-circle-notch fa-spin spinner"></i>
+                            <p>Loading your tasks...</p>
+                        </div>
+                        <!-- Empty State -->
+                        <div id="empty-state" class="empty-state hidden">
+                            <i class="fa-regular fa-folder-open empty-icon"></i>
+                            <p>No tasks yet! Create one on the left to get started.</p>
+                        </div>
+                        <!-- Dynamic Tasks inject here -->
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Toast Notifications Container -->
+    <div id="toast-container" class="toast-container"></div>
+
+    <script src="app.js"></script>
+</body>
+</html>
