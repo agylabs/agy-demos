@@ -1,0 +1,23 @@
+{
+  "settings": {
+    "width": 1280, "height": 720, "fps": 30, "font_size": 14,
+    "theme": "cyberpunk", "output": "videos/03-goal.mp4",
+    "subtitle_style": "FontSize=22,PrimaryColour=&H0000FFFF,Outline=1,BackColour=&H80000000,BorderStyle=4,MarginV=25"
+  },
+  "actions": [
+    {"at": 0.0, "type": "subtitle", "text": "Demo 3: /goal — autonomous task completion"},
+    {"at": 2.5, "type": "type", "text": "/goal Build countdown.py with tests and --reverse flag", "speed": 30},
+    {"at": 5.5, "type": "key", "key": "Enter"},
+    {"at": 6.5, "type": "subtitle", "text": "agy works autonomously — zero human input needed"},
+    {"at": 7.5, "type": "terminal", "cmd": "echo '[Step 1] Environment check... Python 3 ✓'"},
+    {"at": 9.0, "type": "terminal", "cmd": "echo '[Step 2] Created implementation_plan.md'"},
+    {"at": 10.5, "type": "terminal", "cmd": "echo '[Step 3] Auto-approved plan (/goal mode)'"},
+    {"at": 12.0, "type": "terminal", "cmd": "echo '[Step 4] Writing countdown.py...'"},
+    {"at": 13.5, "type": "terminal", "cmd": "echo '[Step 5] Writing test_countdown.py (9 tests)...'"},
+    {"at": 15.0, "type": "subtitle", "text": "agy plans, builds, tests, verifies — all on its own"},
+    {"at": 15.5, "type": "terminal", "cmd": "echo '[Step 6] Running tests... 9/9 PASSED ✓'"},
+    {"at": 17.5, "type": "terminal", "cmd": "echo '[Step 7] Manual verification + audit complete'"},
+    {"at": 19.0, "type": "terminal", "cmd": "echo '$ python3 countdown.py 5' && echo '5' && echo '4' && echo '3' && echo '2' && echo '1' && echo 'Liftoff!'"},
+    {"at": 22.0, "type": "subtitle", "text": "/goal: give agy a task and walk away"}
+  ]
+}

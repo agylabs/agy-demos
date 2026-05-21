@@ -1,0 +1,21 @@
+{
+  "settings": {
+    "width": 1280, "height": 720, "fps": 30, "font_size": 14,
+    "theme": "monokai", "output": "videos/04-grillme.mp4",
+    "subtitle_style": "FontSize=22,PrimaryColour=&H0000FFFF,Outline=1,BackColour=&H80000000,BorderStyle=4,MarginV=25"
+  },
+  "actions": [
+    {"at": 0.0, "type": "subtitle", "text": "Demo 4: /grill-me — interactive requirements gathering"},
+    {"at": 2.5, "type": "type", "text": "/grill-me I want to build a URL shortener", "speed": 35},
+    {"at": 5.5, "type": "key", "key": "Enter"},
+    {"at": 6.5, "type": "subtitle", "text": "agy asks targeted questions before writing any code"},
+    {"at": 7.5, "type": "terminal", "cmd": "echo 'Q1: Technology stack? → Python + FastAPI + SQLite'"},
+    {"at": 9.5, "type": "terminal", "cmd": "echo 'Q2: Slug generation? → Secure Random Token (Base62)'"},
+    {"at": 11.5, "type": "terminal", "cmd": "echo 'Q3: UI type? → Interactive Web UI + JSON API'"},
+    {"at": 13.5, "type": "terminal", "cmd": "echo 'Q4: Features? → Click tracking + TTL + QR codes'"},
+    {"at": 15.5, "type": "terminal", "cmd": "echo 'Q5: Directory? → url_shortener/ subdirectory'"},
+    {"at": 17.0, "type": "subtitle", "text": "After 5 questions: full design alignment, then builds everything"},
+    {"at": 19.0, "type": "terminal", "cmd": "echo '✓ Built: FastAPI app + glassmorphic UI + 8 tests passing'"},
+    {"at": 21.0, "type": "subtitle", "text": "/grill-me: ask first, build later"}
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "settings": {
+    "width": 1280, "height": 720, "fps": 30, "font_size": 14,
+    "theme": "dracula", "output": "videos/06-web.mp4",
+    "subtitle_style": "FontSize=22,PrimaryColour=&H0000FFFF,Outline=1,BackColour=&H80000000,BorderStyle=4,MarginV=25"
+  },
+  "actions": [
+    {"at": 0.0, "type": "subtitle", "text": "Demo 6: Web Browsing — real-time web search"},
+    {"at": 2.5, "type": "type", "text": "echo 'Search for Gemini 3.5 Flash release date'", "speed": 30},
+    {"at": 5.0, "type": "key", "key": "Enter"},
+    {"at": 6.0, "type": "subtitle", "text": "agy searches the web in real-time — knowledge isn't frozen"},
+    {"at": 7.0, "type": "terminal", "cmd": "echo '● WebSearch(\"Gemini 3.5 Flash release date\")'"},
+    {"at": 9.0, "type": "terminal", "cmd": "echo '● WebSearch(\"Gemini 3.5 Flash features\")'"},
+    {"at": 11.0, "type": "subtitle", "text": "Two parallel searches, results synthesized in seconds"},
+    {"at": 12.0, "type": "terminal", "cmd": "echo '✓ Found: Released May 19, 2026 at Google I/O'"},
+    {"at": 14.0, "type": "terminal", "cmd": "echo '  - 280+ tokens/sec, 1M context window'"},
+    {"at": 15.5, "type": "terminal", "cmd": "echo '  - Configurable thinking levels'"},
+    {"at": 17.0, "type": "terminal", "cmd": "echo '  - Lower hallucinations'"},
+    {"at": 18.5, "type": "terminal", "cmd": "echo '✓ Saved: gemini-flash-notes.md'"},
+    {"at": 20.0, "type": "subtitle", "text": "Web browsing: live docs, debugging, research on demand"}
+  ]
+}

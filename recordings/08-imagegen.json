@@ -1,0 +1,20 @@
+{
+  "settings": {
+    "width": 1280, "height": 720, "fps": 30, "font_size": 14,
+    "theme": "cyberpunk", "output": "videos/08-imagegen.mp4",
+    "subtitle_style": "FontSize=22,PrimaryColour=&H0000FFFF,Outline=1,BackColour=&H80000000,BorderStyle=4,MarginV=25"
+  },
+  "actions": [
+    {"at": 0.0, "type": "subtitle", "text": "Demo 8: Image Generation — text-to-image built in"},
+    {"at": 2.5, "type": "type", "text": "echo 'Generate a futuristic rocket with AGY CLI on it'", "speed": 30},
+    {"at": 5.0, "type": "key", "key": "Enter"},
+    {"at": 6.0, "type": "subtitle", "text": "agy generates images on-the-fly — no external tools needed"},
+    {"at": 7.0, "type": "terminal", "cmd": "echo '● GenerateImage(rocket_launch)'"},
+    {"at": 9.0, "type": "terminal", "cmd": "echo '  Generating with text-to-image model...'"},
+    {"at": 11.0, "type": "terminal", "cmd": "echo '● Bash(cp artifact → rocket-launch.png)'"},
+    {"at": 13.0, "type": "terminal", "cmd": "echo '✓ Saved: rocket-launch.png (1.7MB)'"},
+    {"at": 14.5, "type": "subtitle", "text": "Use cases: UI mockups, app icons, diagrams, placeholders"},
+    {"at": 17.0, "type": "terminal", "cmd": "echo 'Use cases:' && echo '  🎨 UI Prototyping' && echo '  🖼  App Icons' && echo '  📊 Diagrams' && echo '  🌈 Placeholder Content'"},
+    {"at": 20.0, "type": "subtitle", "text": "Image Gen: describe what you need, agy creates it inline"}
+  ]
+}

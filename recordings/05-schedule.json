@@ -1,0 +1,21 @@
+{
+  "settings": {
+    "width": 1280, "height": 720, "fps": 30, "font_size": 14,
+    "theme": "onedark", "output": "videos/05-schedule.mp4",
+    "subtitle_style": "FontSize=22,PrimaryColour=&H0000FFFF,Outline=1,BackColour=&H80000000,BorderStyle=4,MarginV=25"
+  },
+  "actions": [
+    {"at": 0.0, "type": "subtitle", "text": "Demo 5: /schedule — set it and forget it"},
+    {"at": 2.5, "type": "type", "text": "echo 'Schedule a 60-second reminder to check url_shortener/'", "speed": 25},
+    {"at": 5.5, "type": "key", "key": "Enter"},
+    {"at": 6.5, "type": "subtitle", "text": "agy registers a timer and goes idle — zero resource usage"},
+    {"at": 7.5, "type": "terminal", "cmd": "echo '[T+0s]  Schedule(60s) registered → task-150'"},
+    {"at": 9.0, "type": "terminal", "cmd": "echo '[T+0s]  Going idle... yielding control'"},
+    {"at": 11.0, "type": "subtitle", "text": "60 seconds later — the system wakes agy up automatically"},
+    {"at": 12.0, "type": "terminal", "cmd": "echo '[T+60s] ⚡ Timer fired! Waking up...'"},
+    {"at": 14.0, "type": "terminal", "cmd": "echo '[T+60s] Running ListDir(url_shortener/)...'"},
+    {"at": 15.5, "type": "terminal", "cmd": "echo '  app/ tests/ requirements.txt shortener.db'"},
+    {"at": 17.0, "type": "subtitle", "text": "Use cases: one-shot reminders, CI polling, log monitoring"},
+    {"at": 20.0, "type": "subtitle", "text": "/schedule: autonomous background worker"}
+  ]
+}
