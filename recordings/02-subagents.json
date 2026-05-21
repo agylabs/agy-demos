@@ -4,14 +4,16 @@
     "theme": "dracula", "output": "videos/02-subagents.mp4",
     "shell_command": "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus agy --dangerously-skip-permissions",
     "startup_delay": 8,
-    "subtitle_style": "FontSize=22,PrimaryColour=&H0000FFFF,Outline=1,BackColour=&H80000000,BorderStyle=4,MarginV=25"
+    "subtitle_style": "FontName=Sans,FontSize=16,PrimaryColour=&H00FFFFFF,OutlineColour=&H40000000,BackColour=&H40000000,Outline=1,Shadow=1,BorderStyle=4,MarginV=20,MarginL=40,MarginR=40"
   },
   "actions": [
-    {"at": 0.0, "type": "subtitle", "text": "Demo 2: Subagents — parallel background work"},
-    {"at": 3.0, "type": "type", "text": "/agents", "speed": 80, "subtitle": "View active subagents with /agents"},
-    {"at": 5.0, "type": "key", "key": "Enter"},
-    {"at": 7.0, "type": "wait", "duration": 3.0, "subtitle": "Subagents run in the background — research, code, test concurrently"},
-    {"at": 11.0, "type": "key", "key": "Escape"},
-    {"at": 13.0, "type": "subtitle", "text": "Types: research (read-only), self (clone), or custom agents"}
+    {"at": 0.0,  "type": "subtitle", "text": "AGY CLI  ·  Demo 2: Subagents"},
+    {"at": 3.0,  "type": "subtitle", "text": "Spawn a research subagent for parallel background work"},
+    {"at": 4.0,  "type": "type", "text": "Spawn a research subagent to find the top 3 features in Go 1.24, while you create a summary file called go-features.md", "speed": 20},
+    {"at": 10.0, "type": "key", "key": "Enter"},
+    {"at": 12.0, "type": "subtitle", "text": "Main agent works while subagent researches in the background"},
+    {"at": 12.1, "type": "wait_until_idle", "pattern": "? for shortcuts", "timeout": 120, "poll": 2, "buffer": 5},
+    {"at": 13.0, "type": "subtitle", "text": "Subagents: parallelize work — research, code, test concurrently"},
+    {"at": 17.0, "type": "wait", "duration": 1.0}
   ]
 }

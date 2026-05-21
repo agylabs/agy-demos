@@ -4,14 +4,16 @@
     "theme": "dracula", "output": "videos/06-web.mp4",
     "shell_command": "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus agy --dangerously-skip-permissions",
     "startup_delay": 8,
-    "subtitle_style": "FontSize=22,PrimaryColour=&H0000FFFF,Outline=1,BackColour=&H80000000,BorderStyle=4,MarginV=25"
+    "subtitle_style": "FontName=Sans,FontSize=16,PrimaryColour=&H00FFFFFF,OutlineColour=&H40000000,BackColour=&H40000000,Outline=1,Shadow=1,BorderStyle=4,MarginV=20,MarginL=40,MarginR=40"
   },
   "actions": [
-    {"at": 0.0, "type": "subtitle", "text": "Demo 6: Web Search — real-time knowledge"},
-    {"at": 3.0, "type": "type", "text": "Search the web for the latest Python 3.13 features and give me a brief summary", "speed": 25, "subtitle": "agy can search the web in real-time"},
-    {"at": 8.0, "type": "key", "key": "Enter"},
-    {"at": 10.0, "type": "wait", "duration": 15.0, "subtitle": "Live web search — knowledge isn't frozen"},
-    {"at": 26.0, "type": "wait", "duration": 10.0, "subtitle": "Results synthesized from multiple sources into structured output"},
-    {"at": 37.0, "type": "subtitle", "text": "Web browsing: live docs, debugging, research on demand"}
+    {"at": 0.0,  "type": "subtitle", "text": "AGY CLI  ·  Demo 6: Web Search & Browsing"},
+    {"at": 3.0,  "type": "subtitle", "text": "agy searches the web in real-time — knowledge isn't frozen"},
+    {"at": 4.0,  "type": "type", "text": "Search the web for what's new in Python 3.13 and give me a brief summary of the top features", "speed": 20},
+    {"at": 9.0,  "type": "key", "key": "Enter"},
+    {"at": 11.0, "type": "subtitle", "text": "Live web search — results synthesized from multiple sources"},
+    {"at": 11.1, "type": "wait_until_idle", "pattern": "? for shortcuts", "timeout": 120, "poll": 2, "buffer": 5},
+    {"at": 12.0, "type": "subtitle", "text": "Web browsing: live docs, debugging, research on demand"},
+    {"at": 16.0, "type": "wait", "duration": 1.0}
   ]
 }

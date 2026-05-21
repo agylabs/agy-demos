@@ -4,14 +4,16 @@
     "theme": "dracula", "output": "videos/08-imagegen.mp4",
     "shell_command": "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus agy --dangerously-skip-permissions",
     "startup_delay": 8,
-    "subtitle_style": "FontSize=22,PrimaryColour=&H0000FFFF,Outline=1,BackColour=&H80000000,BorderStyle=4,MarginV=25"
+    "subtitle_style": "FontName=Sans,FontSize=16,PrimaryColour=&H00FFFFFF,OutlineColour=&H40000000,BackColour=&H40000000,Outline=1,Shadow=1,BorderStyle=4,MarginV=20,MarginL=40,MarginR=40"
   },
   "actions": [
-    {"at": 0.0, "type": "subtitle", "text": "Demo 8: Image Generation — text-to-image built in"},
-    {"at": 3.0, "type": "type", "text": "Generate an image of a futuristic city skyline at sunset with flying cars. Save it as city.png", "speed": 25, "subtitle": "Describe what you need — agy generates it inline"},
-    {"at": 8.0, "type": "key", "key": "Enter"},
-    {"at": 10.0, "type": "wait", "duration": 15.0, "subtitle": "GenerateImage() tool creates the image on-the-fly"},
-    {"at": 26.0, "type": "wait", "duration": 10.0, "subtitle": "Use cases: UI mockups, app icons, diagrams, placeholders"},
-    {"at": 37.0, "type": "subtitle", "text": "No external tools needed — image gen is built into agy"}
+    {"at": 0.0,  "type": "subtitle", "text": "AGY CLI  ·  Demo 8: Image Generation"},
+    {"at": 3.0,  "type": "subtitle", "text": "Generate images on-the-fly with text-to-image"},
+    {"at": 4.0,  "type": "type", "text": "Generate an image of a majestic eagle soaring above snow-capped mountains at sunrise. Save it as eagle.png", "speed": 20},
+    {"at": 9.0,  "type": "key", "key": "Enter"},
+    {"at": 11.0, "type": "subtitle", "text": "agy generates the image inline — no external tools needed"},
+    {"at": 11.1, "type": "wait_until_idle", "pattern": "? for shortcuts", "timeout": 120, "poll": 2, "buffer": 5},
+    {"at": 12.0, "type": "subtitle", "text": "Image Gen: UI mockups, app icons, diagrams, placeholders"},
+    {"at": 16.0, "type": "wait", "duration": 1.0}
   ]
 }

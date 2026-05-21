@@ -4,17 +4,22 @@
     "theme": "dracula", "output": "videos/04-grillme.mp4",
     "shell_command": "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus agy --dangerously-skip-permissions",
     "startup_delay": 8,
-    "subtitle_style": "FontSize=22,PrimaryColour=&H0000FFFF,Outline=1,BackColour=&H80000000,BorderStyle=4,MarginV=25"
+    "subtitle_style": "FontName=Sans,FontSize=16,PrimaryColour=&H00FFFFFF,OutlineColour=&H40000000,BackColour=&H40000000,Outline=1,Shadow=1,BorderStyle=4,MarginV=20,MarginL=40,MarginR=40"
   },
   "actions": [
-    {"at": 0.0, "type": "subtitle", "text": "Demo 4: /grill-me — ask first, build later"},
-    {"at": 3.0, "type": "type", "text": "/grill-me Build a simple todo list app", "speed": 30, "subtitle": "/grill-me triggers an interactive interview before coding"},
-    {"at": 7.0, "type": "key", "key": "Enter"},
-    {"at": 9.0, "type": "wait", "duration": 10.0, "subtitle": "agy asks targeted questions with curated options"},
-    {"at": 20.0, "type": "key", "key": "Enter", "subtitle": "Select recommended option and continue"},
-    {"at": 22.0, "type": "wait", "duration": 8.0, "subtitle": "Each question has recommendations and tradeoff descriptions"},
-    {"at": 31.0, "type": "key", "key": "Enter"},
-    {"at": 33.0, "type": "wait", "duration": 5.0, "subtitle": "After gathering requirements, agy builds with full alignment"},
-    {"at": 39.0, "type": "subtitle", "text": "/grill-me: eliminate ambiguity before writing code"}
+    {"at": 0.0,  "type": "subtitle", "text": "AGY CLI  ·  Demo 4: /grill-me — Requirements Gathering"},
+    {"at": 3.0,  "type": "subtitle", "text": "/grill-me asks targeted questions before writing any code"},
+    {"at": 4.0,  "type": "type", "text": "/grill-me Build a simple calculator CLI tool in Python", "speed": 25},
+    {"at": 7.0,  "type": "key", "key": "Enter"},
+    {"at": 9.0,  "type": "subtitle", "text": "agy asks design questions with curated options"},
+    {"at": 9.1,  "type": "wait_until_idle", "pattern": "Navigate", "timeout": 60, "poll": 2, "buffer": 3},
+    {"at": 10.0, "type": "subtitle", "text": "Select an option and continue the interview"},
+    {"at": 12.0, "type": "key", "key": "Enter"},
+    {"at": 13.0, "type": "wait_until_idle", "pattern": "Navigate", "timeout": 60, "poll": 2, "buffer": 3},
+    {"at": 14.0, "type": "subtitle", "text": "Each question narrows the design — stack, features, structure"},
+    {"at": 16.0, "type": "key", "key": "Enter"},
+    {"at": 17.0, "type": "wait_until_idle", "pattern": "? for shortcuts", "timeout": 120, "poll": 2, "buffer": 5},
+    {"at": 18.0, "type": "subtitle", "text": "/grill-me: eliminate ambiguity before writing code"},
+    {"at": 22.0, "type": "wait", "duration": 1.0}
   ]
 }
