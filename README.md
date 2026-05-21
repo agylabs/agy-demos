@@ -34,24 +34,6 @@ These artifacts were created by agy during the demos:
 | `gemini-flash-notes.md` | Demo 6 (Web Browsing) | Live web research results |
 | `rocket-launch.png` | Demo 8 (Image Gen) | AI-generated image |
 
-## How These Demos Were Made
-
-Claude Code acted as the **driver** — simulating a human demo presenter. All code was written by agy. Claude Code sent prompts to agy via tmux, captured output, and documented the process.
-
-```bash
-# Start agy in tmux
-tmux new-session -d -s agy-demos -x 200 -y 50 \
-  'cd /path/to/demos && DBUS_SESSION_BUS_ADDRESS="unix:path=/run/user/1000/bus" agy --dangerously-skip-permissions'
-
-# Send a prompt
-tmux load-buffer /path/to/prompt.txt
-tmux paste-buffer -t agy-demos
-tmux send-keys -t agy-demos Enter
-
-# Watch live (read-only)
-tmux attach-session -t agy-demos -r
-```
-
 ## Running the Sample Apps
 
 ```bash
