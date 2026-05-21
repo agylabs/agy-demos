@@ -1,22 +1,17 @@
 {
   "settings": {
     "width": 1280, "height": 720, "fps": 30, "font_size": 14,
-    "theme": "solarized", "output": "videos/07-workflow.mp4",
+    "theme": "dracula", "output": "videos/07-workflow.mp4",
+    "shell_command": "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus agy --dangerously-skip-permissions",
+    "startup_delay": 8,
     "subtitle_style": "FontSize=22,PrimaryColour=&H0000FFFF,Outline=1,BackColour=&H80000000,BorderStyle=4,MarginV=25"
   },
   "actions": [
-    {"at": 0.0, "type": "subtitle", "text": "Demo 7: Workflow Skill Creator — build once, reuse forever"},
-    {"at": 2.5, "type": "type", "text": "echo 'Distill our URL shortener workflow into a reusable skill'", "speed": 25},
-    {"at": 5.5, "type": "key", "key": "Enter"},
-    {"at": 6.5, "type": "subtitle", "text": "agy brainstorms, designs, builds, and validates the skill"},
-    {"at": 7.5, "type": "terminal", "cmd": "echo '[Phase 1] Brainstorming: 6 questions across 2 rounds'"},
-    {"at": 9.5, "type": "terminal", "cmd": "echo '[Phase 2] Design: implementation_plan.md created'"},
-    {"at": 11.5, "type": "terminal", "cmd": "echo '[Phase 3] Build: SKILL.md protocol written'"},
-    {"at": 13.5, "type": "terminal", "cmd": "echo '[Phase 4] Validate: scaffolded Task Manager app'"},
-    {"at": 15.0, "type": "subtitle", "text": "Self-healing: auto-fixed namespace collision, 7/7 tests pass"},
-    {"at": 16.0, "type": "terminal", "cmd": "echo '[Phase 5] Self-Healing: fixed imports, 7/7 tests ✓'"},
-    {"at": 18.0, "type": "terminal", "cmd": "echo '✓ Skill saved: .gemini/skills/fastapi-app-scaffold/SKILL.md'"},
-    {"at": 20.0, "type": "subtitle", "text": "Future: just say 'Use fastapi-app-scaffold to scaffold a blog API'"},
-    {"at": 23.0, "type": "subtitle", "text": "Workflow Skills: institutional knowledge, forever"}
+    {"at": 0.0, "type": "subtitle", "text": "Demo 7: Workflow Skills — build once, reuse forever"},
+    {"at": 3.0, "type": "type", "text": "Use the workflow-skill-creator to distill a reusable FastAPI scaffolding skill from our conversation", "speed": 20, "subtitle": "Distill any workflow into a reusable SKILL.md"},
+    {"at": 9.0, "type": "key", "key": "Enter"},
+    {"at": 11.0, "type": "wait", "duration": 15.0, "subtitle": "agy brainstorms, designs, builds, and validates the skill"},
+    {"at": 27.0, "type": "wait", "duration": 10.0, "subtitle": "Includes self-healing: auto-fixes test failures"},
+    {"at": 38.0, "type": "subtitle", "text": "Future: just say 'Use fastapi-app-scaffold to build a blog API'"}
   ]
 }

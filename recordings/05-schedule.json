@@ -1,21 +1,20 @@
 {
   "settings": {
     "width": 1280, "height": 720, "fps": 30, "font_size": 14,
-    "theme": "onedark", "output": "videos/05-schedule.mp4",
+    "theme": "dracula", "output": "videos/05-schedule.mp4",
+    "shell_command": "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus agy --dangerously-skip-permissions",
+    "startup_delay": 8,
     "subtitle_style": "FontSize=22,PrimaryColour=&H0000FFFF,Outline=1,BackColour=&H80000000,BorderStyle=4,MarginV=25"
   },
   "actions": [
     {"at": 0.0, "type": "subtitle", "text": "Demo 5: /schedule — set it and forget it"},
-    {"at": 2.5, "type": "type", "text": "echo 'Schedule a 60-second reminder to check url_shortener/'", "speed": 25},
-    {"at": 5.5, "type": "key", "key": "Enter"},
-    {"at": 6.5, "type": "subtitle", "text": "agy registers a timer and goes idle — zero resource usage"},
-    {"at": 7.5, "type": "terminal", "cmd": "echo '[T+0s]  Schedule(60s) registered → task-150'"},
-    {"at": 9.0, "type": "terminal", "cmd": "echo '[T+0s]  Going idle... yielding control'"},
-    {"at": 11.0, "type": "subtitle", "text": "60 seconds later — the system wakes agy up automatically"},
-    {"at": 12.0, "type": "terminal", "cmd": "echo '[T+60s] ⚡ Timer fired! Waking up...'"},
-    {"at": 14.0, "type": "terminal", "cmd": "echo '[T+60s] Running ListDir(url_shortener/)...'"},
-    {"at": 15.5, "type": "terminal", "cmd": "echo '  app/ tests/ requirements.txt shortener.db'"},
-    {"at": 17.0, "type": "subtitle", "text": "Use cases: one-shot reminders, CI polling, log monitoring"},
-    {"at": 20.0, "type": "subtitle", "text": "/schedule: autonomous background worker"}
+    {"at": 3.0, "type": "type", "text": "/schedule", "speed": 80, "subtitle": "Use /schedule for timers and recurring jobs"},
+    {"at": 5.0, "type": "key", "key": "Enter"},
+    {"at": 7.0, "type": "wait", "duration": 4.0, "subtitle": "Schedule one-shot reminders or recurring polls"},
+    {"at": 12.0, "type": "key", "key": "Escape"},
+    {"at": 14.0, "type": "type", "text": "In 1 minute, check if hello.py exists and report its contents", "speed": 25, "subtitle": "agy registers a timer, goes idle, wakes up automatically"},
+    {"at": 19.0, "type": "key", "key": "Enter"},
+    {"at": 21.0, "type": "wait", "duration": 8.0, "subtitle": "Zero resource usage while waiting — system fires the wakeup"},
+    {"at": 30.0, "type": "subtitle", "text": "/schedule: autonomous background worker"}
   ]
 }

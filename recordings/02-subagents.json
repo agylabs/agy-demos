@@ -1,21 +1,17 @@
 {
   "settings": {
     "width": 1280, "height": 720, "fps": 30, "font_size": 14,
-    "theme": "nord", "output": "videos/02-subagents.mp4",
+    "theme": "dracula", "output": "videos/02-subagents.mp4",
+    "shell_command": "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus agy --dangerously-skip-permissions",
+    "startup_delay": 8,
     "subtitle_style": "FontSize=22,PrimaryColour=&H0000FFFF,Outline=1,BackColour=&H80000000,BorderStyle=4,MarginV=25"
   },
   "actions": [
-    {"at": 0.0, "type": "subtitle", "text": "Demo 2: Subagents — parallel background agents"},
-    {"at": 2.5, "type": "type", "text": "echo '> Spawn a research subagent to find Go 1.24 features'", "speed": 25},
+    {"at": 0.0, "type": "subtitle", "text": "Demo 2: Subagents — parallel background work"},
+    {"at": 3.0, "type": "type", "text": "/agents", "speed": 80, "subtitle": "View active subagents with /agents"},
     {"at": 5.0, "type": "key", "key": "Enter"},
-    {"at": 6.0, "type": "subtitle", "text": "Main agent works while subagent researches in the background"},
-    {"at": 7.0, "type": "terminal", "cmd": "echo '[Main Agent] Creating go-news.md placeholder...'"},
-    {"at": 9.0, "type": "terminal", "cmd": "echo '[Subagent]   Searching web for Go 1.24 features...'"},
-    {"at": 11.0, "type": "terminal", "cmd": "echo '[Subagent]   Found: Generic Type Aliases, Tool Deps, os.Root'"},
-    {"at": 13.0, "type": "subtitle", "text": "Subagent reports back — main agent integrates results"},
-    {"at": 14.0, "type": "terminal", "cmd": "echo '[Main Agent] Updated go-news.md with findings'"},
-    {"at": 16.0, "type": "terminal", "cmd": "echo '[Main Agent] Killed subagent (cleanup)'"},
-    {"at": 18.0, "type": "subtitle", "text": "Types: research (read-only), self (clone), or custom agents"},
-    {"at": 21.0, "type": "subtitle", "text": "Subagents: parallelize work automatically"}
+    {"at": 7.0, "type": "wait", "duration": 3.0, "subtitle": "Subagents run in the background — research, code, test concurrently"},
+    {"at": 11.0, "type": "key", "key": "Escape"},
+    {"at": 13.0, "type": "subtitle", "text": "Types: research (read-only), self (clone), or custom agents"}
   ]
 }

@@ -2,23 +2,25 @@
   "settings": {
     "width": 1280, "height": 720, "fps": 30, "font_size": 14,
     "theme": "dracula", "output": "videos/01-skills.mp4",
+    "shell_command": "DBUS_SESSION_BUS_ADDRESS=unix:path=/run/user/1000/bus agy --dangerously-skip-permissions",
+    "startup_delay": 8,
     "subtitle_style": "FontSize=22,PrimaryColour=&H0000FFFF,Outline=1,BackColour=&H80000000,BorderStyle=4,MarginV=25"
   },
   "actions": [
-    {"at": 0.0, "type": "subtitle", "text": "Demo 1: Built-in Skills — 56+ domain expert playbooks"},
-    {"at": 2.0, "type": "type", "text": "agy", "speed": 80},
-    {"at": 3.0, "type": "key", "key": "Enter"},
-    {"at": 5.0, "type": "subtitle", "text": "Use /skills to list all available skills"},
-    {"at": 5.5, "type": "type", "text": "/skills", "speed": 70},
-    {"at": 7.0, "type": "key", "key": "Enter"},
-    {"at": 8.0, "type": "wait", "duration": 2.0},
-    {"at": 10.0, "type": "subtitle", "text": "Skills cover Chrome DevTools, Firebase, Science, Web, and more"},
-    {"at": 13.0, "type": "key", "key": "Escape"},
-    {"at": 14.0, "type": "subtitle", "text": "Just describe what you need — agy loads the right skill automatically"},
-    {"at": 14.5, "type": "type", "text": "Use the modern-web-guidance skill to look up CSS container queries", "speed": 30},
-    {"at": 17.0, "type": "key", "key": "Enter"},
-    {"at": 18.0, "type": "wait", "duration": 2.0},
-    {"at": 20.0, "type": "subtitle", "text": "agy fetches live best practices via the skill's CLI tool"},
-    {"at": 23.0, "type": "subtitle", "text": "Skills: domain expertise on demand, zero configuration"}
+    {"at": 0.0, "type": "subtitle", "text": "Demo 1: Built-in Skills — 56+ expert playbooks"},
+    {"at": 3.0, "type": "type", "text": "/skills", "speed": 80, "subtitle": "Opening the skills browser"},
+    {"at": 5.0, "type": "key", "key": "Enter"},
+    {"at": 7.0, "type": "wait", "duration": 3.0, "subtitle": "56 skills across Chrome DevTools, Firebase, Science, Web, and more"},
+    {"at": 11.0, "type": "key", "key": "Down"},
+    {"at": 11.3, "type": "key", "key": "Down"},
+    {"at": 11.6, "type": "key", "key": "Down"},
+    {"at": 11.9, "type": "key", "key": "Down"},
+    {"at": 12.2, "type": "key", "key": "Down"},
+    {"at": 12.5, "type": "key", "key": "Down"},
+    {"at": 12.8, "type": "key", "key": "Down"},
+    {"at": 13.1, "type": "key", "key": "Down"},
+    {"at": 14.0, "type": "wait", "duration": 2.0, "subtitle": "Browse and select any skill — agy loads it automatically"},
+    {"at": 17.0, "type": "key", "key": "Escape"},
+    {"at": 18.0, "type": "subtitle", "text": "Just describe what you need — agy activates the right skill"}
   ]
 }
