@@ -191,7 +191,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 72px 48px 48px;
+  padding: 64px 2.5% 24px;
   opacity: 0;
   transform: translateX(60px);
   pointer-events: none;
@@ -211,8 +211,8 @@ body {
 }
 
 .slide-content {
-  max-width: 960px;
-  width: 100%;
+  width: 95%;
+  max-width: 1600px;
 }
 
 /* ── Title Slide ── */
@@ -249,9 +249,9 @@ h1 {
 }
 
 .subtitle {
-  font-size: 1.15rem;
+  font-size: clamp(1.15rem, 1.35vw, 1.5rem);
   color: var(--text-dim);
-  max-width: 540px;
+  max-width: 800px;
   margin: 0 auto 32px;
   line-height: 1.6;
 }
@@ -342,26 +342,29 @@ kbd {
 }
 
 h2 {
-  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
   font-weight: 700;
   letter-spacing: -0.02em;
   margin-bottom: 12px;
 }
 
 .slide-desc {
-  font-size: 1rem;
+  font-size: clamp(1.05rem, 1.25vw, 1.35rem);
   color: var(--text-dim);
   line-height: 1.6;
-  max-width: 640px;
+  max-width: 1000px;
   margin-bottom: 28px;
 }
 
 /* ── Video Player ── */
 .demo-video {
   width: 100%;
+  max-height: clamp(350px, 70vh, 700px);
+  object-fit: contain;
   border-radius: var(--radius);
   border: 1px solid var(--border);
   background: #000;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.5);
 }
 
 /* ── Terminal ── */
@@ -422,13 +425,13 @@ h2 {
 /* ── Two Column ── */
 .two-col {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 28px;
+  grid-template-columns: 3fr 2fr;
+  gap: clamp(28px, 5vw, 64px);
   align-items: start;
 }
 
 .col h3 {
-  font-size: 1rem;
+  font-size: 1.15rem;
   font-weight: 600;
   margin-bottom: 16px;
   color: var(--text);
@@ -443,7 +446,7 @@ h2 {
 }
 
 .stat-card {
-  padding: 16px;
+  padding: 20px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
@@ -451,16 +454,16 @@ h2 {
 }
 
 .stat-num {
-  font-size: 1.6rem;
+  font-size: 1.9rem;
   font-weight: 700;
   color: var(--accent-2);
   font-family: var(--mono);
 }
 
 .stat-label {
-  font-size: 0.75rem;
+  font-size: 0.85rem;
   color: var(--text-dim);
-  margin-top: 4px;
+  margin-top: 6px;
 }
 
 .note {
@@ -613,8 +616,8 @@ h2 {
   gap: 2px;
 }
 
-.timeline-content strong { font-size: 0.9rem; }
-.timeline-content .dim { font-size: 0.8rem; }
+.timeline-content strong { font-size: 1.05rem; }
+.timeline-content .dim { font-size: 0.9rem; }
 
 /* ── Question Flow (/grill-me) ── */
 .question-flow {
@@ -625,7 +628,7 @@ h2 {
 }
 
 .question-card {
-  padding: 16px;
+  padding: 18px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
@@ -646,13 +649,13 @@ h2 {
 }
 
 .q-text {
-  font-size: 0.82rem;
+  font-size: 0.9rem;
   font-weight: 500;
   margin-bottom: 8px;
 }
 
 .q-answer {
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   color: var(--green);
   font-family: var(--mono);
 }
@@ -669,7 +672,7 @@ h2 {
   display: flex;
   align-items: center;
   gap: 20px;
-  padding: 14px 20px;
+  padding: 16px 22px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
@@ -679,7 +682,7 @@ h2 {
 
 .schedule-time {
   font-family: var(--mono);
-  font-size: 0.78rem;
+  font-size: 0.86rem;
   color: var(--text-dim);
   min-width: 60px;
 }
@@ -706,8 +709,8 @@ h2 {
 .schedule-icon.wake { color: var(--yellow); }
 .schedule-icon.run { color: var(--green); }
 
-.schedule-action strong { font-size: 0.88rem; }
-.schedule-action .dim { font-size: 0.78rem; display: block; }
+.schedule-action strong { font-size: 1rem; }
+.schedule-action .dim { font-size: 0.86rem; display: block; }
 
 .use-cases {
   display: flex;
@@ -716,9 +719,9 @@ h2 {
 }
 
 .use-case {
-  padding: 6px 14px;
+  padding: 8px 16px;
   border-radius: 20px;
-  font-size: 0.8rem;
+  font-size: 0.88rem;
   background: var(--surface);
   border: 1px solid var(--border);
   color: var(--text-dim);
@@ -734,7 +737,7 @@ h2 {
 }
 
 .feature-list li {
-  font-size: 0.88rem;
+  font-size: 0.95rem;
   padding-left: 20px;
   position: relative;
   color: var(--text-dim);
@@ -760,7 +763,7 @@ h2 {
 
 .phase {
   text-align: center;
-  padding: 20px 24px;
+  padding: 22px 26px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius);
@@ -771,12 +774,12 @@ h2 {
 
 .phase-name {
   font-weight: 600;
-  font-size: 0.9rem;
+  font-size: 1rem;
   margin-bottom: 4px;
 }
 
 .phase-detail {
-  font-size: 0.75rem;
+  font-size: 0.82rem;
   color: var(--text-dim);
 }
 
@@ -797,11 +800,11 @@ h2 {
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 14px 16px;
+  padding: 16px 18px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  font-size: 0.88rem;
+  font-size: 0.95rem;
 }
 
 .use-icon { font-size: 1.3rem; }
@@ -811,7 +814,7 @@ h2 {
   display: flex;
   flex-direction: column;
   gap: 12px;
-  max-width: 560px;
+  max-width: 720px;
   margin: 32px auto 24px;
   text-align: left;
 }
@@ -820,7 +823,7 @@ h2 {
   display: flex;
   align-items: flex-start;
   gap: 16px;
-  padding: 16px 20px;
+  padding: 18px 22px;
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
@@ -847,18 +850,18 @@ h2 {
   gap: 4px;
 }
 
-.step-text strong { font-size: 0.9rem; }
+.step-text strong { font-size: 1rem; }
 
 .step-text code {
   font-family: var(--mono);
-  font-size: 0.8rem;
+  font-size: 0.86rem;
   padding: 2px 8px;
   background: var(--surface-2);
   border-radius: 4px;
   color: var(--accent-2);
 }
 
-.step-text .dim { font-size: 0.78rem; }
+.step-text .dim { font-size: 0.84rem; }
 
 /* ── Footer ── */
 .footer {
