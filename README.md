@@ -1,6 +1,11 @@
 # AGY CLI Feature Demos
 
-Bite-sized demos showcasing [Antigravity CLI](https://antigravity.google) (`agy`) features. Each demo was driven by Claude Code via tmux, with agy performing all the actual work.
+> **[View the interactive slide deck and full docs](https://agylabs.github.io/agy-demos/)** — the best way to explore these demos.
+
+Bite-sized demos showcasing [Antigravity CLI](https://antigravity.google) (`agy`) features. Each demo highlights a different capability with real prompts, real outputs, and working sample code.
+
+- [Slides](https://agylabs.github.io/agy-demos/) — Quick visual overview of all 8 features
+- [Docs](https://agylabs.github.io/agy-demos/guide.html) — Detailed walkthrough for each demo
 
 ## Prerequisites
 
