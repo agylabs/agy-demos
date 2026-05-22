@@ -8,12 +8,17 @@
   },
   "actions": [
     {"at": 0.0,  "type": "subtitle", "text": "AGY CLI  ·  Demo 8: Image Generation"},
-    {"at": 3.0,  "type": "subtitle", "text": "Generate images on-the-fly with text-to-image"},
-    {"at": 4.0,  "type": "type", "text": "Generate an image of a majestic eagle soaring above snow-capped mountains at sunrise. Save it as eagle.png", "speed": 20},
+    {"at": 3.0,  "type": "subtitle", "text": "Generate images on-the-fly — no external tools needed"},
+    {"at": 4.0,  "type": "type", "text": "Generate an image of a majestic lion in outer space surrounded by nebulas. Save it as lion.png", "speed": 20},
     {"at": 9.0,  "type": "key", "key": "Enter"},
-    {"at": 11.0, "type": "subtitle", "text": "agy generates the image inline — no external tools needed"},
-    {"at": 11.1, "type": "wait_until_idle", "pattern": "? for shortcuts", "timeout": 120, "poll": 2, "buffer": 5},
-    {"at": 12.0, "type": "subtitle", "text": "Image Gen: UI mockups, app icons, diagrams, placeholders"},
-    {"at": 16.0, "type": "wait", "duration": 1.0}
+    {"at": 11.0, "type": "subtitle", "text": "agy calls GenerateImage() to create the image inline"},
+    {"at": 11.1, "type": "wait_until_idle", "pattern": "? for shortcuts", "timeout": 120, "poll": 2, "buffer": 3},
+    {"at": 12.0, "type": "subtitle", "text": "Image generated — now let's modify it"},
+    {"at": 15.0, "type": "type", "text": "Now edit the lion image to add a glowing crown on its head and make the nebula colors more vibrant. Save the new version as lion-crowned.png", "speed": 18},
+    {"at": 22.0, "type": "key", "key": "Enter"},
+    {"at": 24.0, "type": "subtitle", "text": "Iterative workflow — generate, review, refine"},
+    {"at": 24.1, "type": "wait_until_idle", "pattern": "? for shortcuts", "timeout": 120, "poll": 2, "buffer": 5},
+    {"at": 25.0, "type": "subtitle", "text": "Image Gen: create, iterate, and refine — all inside the CLI"},
+    {"at": 29.0, "type": "wait", "duration": 1.0}
   ]
 }
