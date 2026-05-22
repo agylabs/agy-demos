@@ -9,16 +9,26 @@
   "actions": [
     {"at": 0.0,  "type": "subtitle", "text": "AGY CLI  ·  Demo 8: Image Generation"},
     {"at": 3.0,  "type": "subtitle", "text": "Generate images on-the-fly — no external tools needed"},
-    {"at": 4.0,  "type": "type", "text": "Generate an image of a majestic lion in outer space surrounded by nebulas. Save it as lion.png", "speed": 20},
+    {"at": 4.0,  "type": "type", "text": "Generate an image of a majestic lion in outer space surrounded by colorful nebulas. Save it as lion.png", "speed": 20},
     {"at": 9.0,  "type": "key", "key": "Enter"},
-    {"at": 11.0, "type": "subtitle", "text": "agy calls GenerateImage() to create the image inline"},
-    {"at": 11.1, "type": "wait_until_idle", "pattern": "? for shortcuts", "timeout": 120, "poll": 2, "buffer": 3},
-    {"at": 12.0, "type": "subtitle", "text": "Image generated — now let's modify it"},
-    {"at": 15.0, "type": "type", "text": "Now edit the lion image to add a glowing crown on its head and make the nebula colors more vibrant. Save the new version as lion-crowned.png", "speed": 18},
-    {"at": 22.0, "type": "key", "key": "Enter"},
-    {"at": 24.0, "type": "subtitle", "text": "Iterative workflow — generate, review, refine"},
-    {"at": 24.1, "type": "wait_until_idle", "pattern": "? for shortcuts", "timeout": 120, "poll": 2, "buffer": 5},
-    {"at": 25.0, "type": "subtitle", "text": "Image Gen: create, iterate, and refine — all inside the CLI"},
-    {"at": 29.0, "type": "wait", "duration": 1.0}
+    {"at": 11.0, "type": "subtitle", "text": "agy calls GenerateImage() — creating the image inline"},
+    {"at": 11.1, "type": "wait_until_idle", "pattern": "? for shortcuts", "timeout": 120, "poll": 2, "buffer": 2},
+
+    {"at": 12.0, "type": "subtitle", "text": "Image generated — let's view it in the browser"},
+    {"at": 14.0, "type": "show_browser", "url": "./lion.png", "duration": 6.0, "subtitle": "The generated lion in outer space"},
+    {"at": 21.0, "type": "close_browser"},
+
+    {"at": 23.0, "type": "subtitle", "text": "Now let's modify the image with another prompt"},
+    {"at": 24.0, "type": "type", "text": "Edit the lion image to add a glowing golden crown on its head and make the nebula colors more vibrant. Save as lion-crowned.png", "speed": 18},
+    {"at": 31.0, "type": "key", "key": "Enter"},
+    {"at": 33.0, "type": "subtitle", "text": "Iterative workflow — generate, view, refine"},
+    {"at": 33.1, "type": "wait_until_idle", "pattern": "? for shortcuts", "timeout": 120, "poll": 2, "buffer": 2},
+
+    {"at": 34.0, "type": "subtitle", "text": "Modified image ready — viewing the updated version"},
+    {"at": 36.0, "type": "show_browser", "url": "./lion-crowned.png", "duration": 6.0, "subtitle": "The lion now has a glowing crown"},
+    {"at": 43.0, "type": "close_browser"},
+
+    {"at": 45.0, "type": "subtitle", "text": "Image Gen: create, iterate, and refine — all inside agy CLI"},
+    {"at": 49.0, "type": "wait", "duration": 1.0}
   ]
 }

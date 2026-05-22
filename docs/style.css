@@ -243,8 +243,9 @@ body.docs-body .topnav {
 }
 
 .slide-content {
-  width: 100%;
-  max-width: none;
+  width: 90%;
+  max-width: 1600px;
+  margin: 0 auto;
 }
 
 /* ── Title Slide ── */
